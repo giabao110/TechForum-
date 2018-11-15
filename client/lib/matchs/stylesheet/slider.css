@@ -1,0 +1,105 @@
+
+/* SLIDER */
+div.rc-tabs-tab{
+  padding: 7px 0px 11px 0px;
+  background:#ffffff;
+  font-family: 'Ubuntu';
+  font-weight: normal;
+  font-style: normal;
+  width: 43px;
+  height: 40px !important;
+  text-align: center;
+  font-size:20px;
+}
+.rc-tabs.rc-tabs-top{
+  border: none;
+}
+
+div.rc-tabs-top .rc-tabs-tab{
+  margin-right:16px;
+}
+
+div.rc-tabs-tab-active, .rc-tabs-tab-active:hover{
+  background: #56ab0a;
+  color: #fff;
+}
+
+div.rc-tabs-tab:hover{
+  color:#2b2b2b;
+  cursor: pointer;
+}
+
+div.rc-tabs-top .rc-tabs-bar{
+  border-bottom:0px;
+}
+
+.hr_slider { 
+  margin: 37px 0 0px 0;
+  height: 0.5px;
+  border: 0;
+  background: black;
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, #e3e3e3));
+}
+.hr_sliderdown { 
+  margin: 1px 0 -25px 0;
+  height: 1.5px;
+  border: 0;
+  background: black;
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, #e3e3e3));
+}
+
+.rc-tabs-ink-bar.rc-tabs-ink-bar-animated{
+  background: #fff url(img/grounds/groundshome/select.svg) no-repeat;
+  background-size: 13px;
+  z-index: 0 !important;
+  position: absolute;
+  background-position-x: center;
+  background-position-y: 0px;
+}
+
+div.rc-tabs-top {
+  border-bottom: none;
+}
+div.rc-tabs-top .rc-tabs-ink-bar{
+  height: 7px;
+  bottom: 0;
+  left: 0;
+}
+
+div.rc-tabs-ink-bar.rc-tabs-ink-bar-animated[style]{
+  width: 43px !important;
+}
+
+.rc-tabs-ink-bar-animated[style]{
+  transition: none;
+}
+
+span.rc-tabs-tab-prev-icon::before{
+  content: "" !important;
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  background: url(https://cdn4.iconfinder.com/data/icons/app2/512/prev-512.png) no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+}
+
+span.rc-tabs-tab-next-icon::before{
+  content: "" !important;
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  background: url(https://cdn4.iconfinder.com/data/icons/app2/512/next-512.png) no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+} 
+
+div.rc-tabs-nav{
+  height: 47px !important;
+}
+.today{
+  font-size: 13px;
+  padding-top: 4px;
+}

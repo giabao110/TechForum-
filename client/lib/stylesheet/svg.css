@@ -1,0 +1,119 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?sesjcv');
+  src:  url('fonts/icomoon.eot?sesjcv#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?sesjcv') format('truetype'),
+    url('fonts/icomoon.woff?sesjcv') format('woff'),
+    url('fonts/icomoon.svg?sesjcv#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-back:before {
+  content: "\e908";
+}
+.icon-farvo:before {
+  content: "\e909";
+  color: #56ab0a;
+}
+.icon-messenger:before {
+  content: "\e90a";
+  color: #56ab0a;
+}
+.icon-cancel:before {
+  content: "\e90b";
+  color: #56ab0a;
+}
+.icon-celendar:before {
+  content: "\e90c";
+  color: #a5a5a5;
+}
+.icon-logostick:before {
+  content: "\e90d";
+  color: #56ab0a;
+}
+.icon-next:before {
+  content: "\e90e";
+  color: #fff;
+}
+.icon-plus:before {
+  content: "\e90f";
+  color: #56ab0a;
+}
+.icon-share:before {
+  content: "\e910";
+  color: #a5a5a5;
+}
+.icon-question:before {
+  content: "\e911";
+  color: #d1d1d1;
+}
+.icon-king:before {
+  content: "\e900";
+  color: #a5a5a5;
+}
+.icon-people:before {
+  content: "\e901";
+  color: #a5a5a5;
+}
+.icon-rate0:before {
+  content: "\e902";
+  color: #e7e7e7;
+}
+.icon-dropdown:before {
+  content: "\e903";
+  color: #969696;
+}
+.icon-loanding:before {
+  content: "\e904";
+}
+.icon-logogrey:before {
+  content: "\e905";
+  color: #a5a5a5;
+}
+.icon-search:before {
+  content: "\e907";
+  color: #737373;
+}
+.icon-stick:before {
+  content: "\e912";
+  color: #56ab0a;
+}
+.icon-brand:before {
+  content: "\e906";
+  color: #56ab0a;
+}
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}

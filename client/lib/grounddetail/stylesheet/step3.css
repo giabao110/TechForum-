@@ -1,0 +1,201 @@
+/* BUTTON */
+
+.stp__3-btn{
+  display: block;
+  padding: 0 15px;
+  text-align: center;
+  background-color: #56ab0a;
+  border: none;
+  cursor: pointer;
+  height: 52px;
+  width: 120px;
+}
+
+.stp__3-btn:focus{
+  outline: none;
+}
+
+.stp__3-btntext{
+  margin-left:6px;
+}
+
+/* LAYOUT */
+
+.stp3__{
+  margin: 38.5px 38.5px 0 38.5px;
+  line-height: 1;
+}
+
+
+.stp3__location{
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 19px;
+}
+
+.stp3_locationright{
+  margin-top: 0;
+  line-height: 1.25;
+}
+
+.stp3_locationcontent{
+  margin-bottom:5px;
+}
+
+.stp3_locationleft{
+  margin-right: 33px;
+}
+
+.stp3_location10{
+  padding-left: 10px;
+  border-left: 0.5px solid #dcdcdc;
+  line-height: 1;
+}
+
+.sexy_line { 
+  margin: 25px 0;
+  height: 0.5px;
+  border: 0;
+  background: black;
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, #e3e3e3));
+}
+
+.sexy_linee { 
+  margin: 15px 0;
+  height: 0.5px;
+  border: 0;
+  background: black;
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, #e3e3e3));
+}
+
+/* SEARCH */
+.stp3__search{
+  display: block;
+  width: 613px;
+  height: 38.5px;
+  padding: 0 0 0 29px;
+  color:  #737373;
+  background-color: #232323 ;
+  background-clip: padding-box;
+  border: 0px;
+  border-radius: 7px;
+  background: #ebebeb url(img/header/search.png) no-repeat left center;
+  background-size: 10px;
+  background-position-x: 12px;
+}
+
+.stp3__search:hover{
+  outline: none;
+}
+.stp3__search:focus{
+  outline: none;
+}
+
+.stp3__search:-moz-placeholder{
+  color:#56ab0a;
+}
+
+/* SUGGEST */
+
+.stp3__suggest{
+  margin-top:21px;
+  margin-bottom:15px;
+}
+
+/* TEAMS */
+
+.stp3__teamwrap{
+  margin-bottom: 10px;
+}
+
+.stp3__teams{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.stp3__teamsdiv{
+  width: 290px;
+  height: 77px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  border: 2px solid #ffffff;
+}
+
+.stp3__teamsdiv:hover{
+  border: 2px solid #56ab0a;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #ffffff url(img/step3/stick.png) no-repeat right center;
+  background-size: 17px;
+  background-position-x: 250px;
+}
+
+.stp3__teamsdiv:focus{
+  border: 2px solid #56ab0a;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #ffffff url(img/step3/stick.png) no-repeat right center;
+  background-size: 17px;
+  background-position-x: 250px;
+}
+
+.stp3__teamslogo{
+  width: 70px;
+  padding: 7px 0 8px 9px;
+}
+
+.stp3__teamsloogoimg{
+  width: 61px;
+  height: 61px;
+}
+
+.stp3__teamsloogoimgg{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.stp3__nameteams{
+  margin-bottom: 9px;
+}
+
+.stp3__stick{
+  opacity: 0;
+  margin: 32px 0 32px 58px;
+}
+
+
+/* FOOTER */
+.stp3__footerwrap{
+  display: flex;
+  align-items: center;
+}
+
+
+.stp3__footerbtn{
+  display: block;
+  padding: 0 15px;
+  text-align: center;
+  background-color: #56ab0a;
+  border: none;
+  cursor: pointer;
+  height: 52px;
+  width: 156px;
+  text-transform: uppercase;
+}
+
+.stp3__footerbtn:focus{
+  outline: none;
+}
+
+.stp__2-btntext{
+  margin-left:6px;
+}
+
+.stp3_times{
+  width: 70px;  
+}

@@ -1,0 +1,44 @@
+.regis__{
+  display: flex;
+  justify-content: space-between;
+}
+
+.regis__contain {
+  margin: auto;
+  right: 0;
+  max-width: 640px;
+  padding: 15px 15px 10px 15px;
+  background-color: rgb(13, 13, 13, 0.65);
+}
+
+input.regis__input{
+  width: 200px;
+  margin-left: 15px;
+}
+
+.regis__hr{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border:0.5px solid rgba(255, 255, 255, 0.6);
+}
+.regis__spa{
+  margin-left: 15px;
+}
+
+.regis__div{
+  display: flex;
+}
+
+.regis__divlb{
+  margin-top: 10px;
+  width: 65px;
+}
+
+.regis__divlb2{
+  margin-top: 10px;
+  width: 100px;
+}
+
+
+
+

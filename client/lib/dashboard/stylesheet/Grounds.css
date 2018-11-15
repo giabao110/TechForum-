@@ -1,0 +1,77 @@
+.dashboard{
+  margin-bottom: 20px;
+}
+
+.matchs__btnsz{
+  height: 20px;
+}
+
+.matchs__btnsz:focus{
+  outline:none;
+}
+
+.regular.f_24.table.table-dark td{
+  padding: 12px 12px;
+}
+
+.frm_grounds{
+  margin: 20px auto;
+}
+
+input.form-control{
+  padding: 0.375rem .75rem;
+  font-size: 12px;
+}
+
+input.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: none;
+  outline: none;
+  box-shadow: none;
+}
+
+div select.form-control:not([size]):not([multiple]) {
+  height: auto;
+  width: 43px;
+  font-family: 'Ubuntu';
+  font-weight: normal;
+  font-style: normal;
+  font-size:12px;
+}
+
+div select.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: none;
+  outline: none;
+  box-shadow: none;
+}
+
+
+input[type=date], input[type=datetime-local], input[type=month], input[type=time]{
+  width: 100%;
+  padding: 10px;
+  margin: 0px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+.btn-warning {
+    color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    width: 100%;
+}
+
+.btn-danger {
+    color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    width: 100%;
+}
+
+.btn-click {
+  border: 1px solid #c9c9c9;
+}

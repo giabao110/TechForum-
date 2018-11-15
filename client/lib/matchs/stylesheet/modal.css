@@ -1,0 +1,266 @@
+/* JOIN */
+.join__body{
+  margin: 0px 43px 40px 43px;
+}
+
+/* TITLE */
+.join__{
+  border:none;
+  border-radius:0;
+}
+.join__title{
+  display: flex;
+  justify-content: space-between;
+  margin: 34px 34px 0 42px;
+  align-items: center;
+}
+
+.join__right{
+  display: flex;
+}
+.join__right-share{
+  width: 83px;
+  height: 33px;
+  border: 0.5px solid #dcdcdc;
+}
+
+.join__right-share:hover{
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  color:#56ab0a;
+}
+
+.join__right-share:focus{
+  outline: none;
+  cursor: pointer;
+}
+.join__right-celendar{
+  width: 142px;
+  height: 33px;
+  border-top: 0.5px solid #dcdcdc;
+  border-bottom: 0.5px solid #dcdcdc;
+  border-left: 0.5px solid #dcdcdc;
+}
+
+.join__right-celendar:hover{
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  color:#56ab0a;
+}
+
+.join__right-celendar:focus{
+  outline: none;
+  cursor: pointer;
+}
+
+.join__right-{
+  margin:auto;
+  padding-left: 10px;
+}
+
+.join__right-:hover{
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  color:#56ab0a;
+}
+
+/* MATCH */
+.join__match{
+  display: flex;
+  align-items: center;
+  margin:42px 50px 31px 50px;
+}
+
+div.match-vs{
+  margin: 0px 33px 100px 33px;
+  color:#2b2b2b;
+}
+
+/* TEAM1 */
+.join__team1{
+
+  width: 169px;
+  max-height: auto;
+}
+
+.join__team1-logo{
+  height: 115px;
+  display: block;
+}
+
+.join__team1-logoimg{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.join__team2-logoimg{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin:auto auto auto 25px;
+}
+
+/* NAME1 */
+.join__team1-name{
+  display: block;
+  line-height: 1;
+  margin: 0 auto;
+  padding-top:13px;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+/* RATE1 */
+
+.join__team1-rate{
+  height: 10.5px;
+  width: 61.5px;
+  display: block;
+  margin: 6px auto;
+}
+
+.join__team1-rateimg{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+}
+/* USER1 */
+.join__team1-star{
+  height: 20px;
+  display: flex;
+  align-items: center;
+  margin: 16px auto 10px auto;
+}
+
+.join__team1-starking{
+  height: 10px;
+  width: 10px;
+  margin-left:9px;
+}
+
+.join__team1-starkingimg{
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto 0;
+}
+
+.join__team1-starpeople{
+  height: 20px;
+  width: 20px;
+  margin: 0 9px;
+}
+
+.join__team1-starpeopleimg{
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto 0;
+}
+
+.join__team1-starpeoplee{
+  margin-left:6px; 
+}
+
+/* PEOPLE1 */
+.join__team1-player{
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.join__team1-playerr{
+  margin: 0 9px;
+}
+
+/* LOCATION */
+.join__location{
+  border: 0.5px solid #dcdcdc;
+  height: 123px;
+  background-color: #fbfbfb;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* LEFT */
+.join__ocation-left{
+  width: 125px;
+  display: block;
+}
+
+.join__locationimg{
+  width: 81px;
+  height: 81px;
+  margin:20px 20px 22px 24px;
+}
+
+.join__locationimgg{
+  max-width: 100%;
+  min-width: 100%;
+  display: block;
+}
+
+/* RIGHT */
+.join__location-right{
+  padding-top:20px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.join__location-righttitle{
+  margin-bottom: 10px;
+}
+
+/* FOOTER */
+.join__footer{
+  display: flex;
+  justify-content: space-between;
+  height:121px;
+  align-items: center;
+  background: #fbfbfb;
+  padding: 35px 42px;
+}
+/* FOOTER LEFT */
+.join__footer-left{
+  display: flex;
+  align-items: center;
+}
+
+.join__footer-link{
+  line-height: 1;
+}
+
+.join__footer-link a:hover{
+  color:#56ab0a;
+  text-decoration:none;
+}
+
+.join__footer-left a:hover{
+  color:#56ab0a;
+  text-decoration:none;
+}
+
+.join__footer-left .icon-messenger::before{
+  font-size:28px;
+  margin-right: 15px;
+}
+
+.join__button{
+  border-radius: 0px;
+  background: #56ab0a;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  width: 156px;
+  height: 51px;
+  cursor: pointer;
+}
+
+.join__button:focus{
+  outline: none;
+}

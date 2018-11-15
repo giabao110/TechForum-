@@ -1,0 +1,115 @@
+/* BUTTON */
+
+.stp__2-btn{
+  display: block;
+  padding: 0 15px;
+  text-align: center;
+  background-color: #56ab0a;
+  border: none;
+  cursor: pointer;
+  height: 52px;
+  width: 120px;
+}
+
+.stp__2-btn:focus{
+  outline: none;
+}
+
+.stp__2-btntext{
+  margin-left:6px;
+}
+
+/* LAYOUT */
+.stp2__{
+  margin: 40px 43px 0 43px;
+  line-height: 1;
+}
+
+.stp2__logo{
+  margin-top:40px;
+  margin-bottom: 26px; 
+}
+
+.stp2__logotext{
+  margin-bottom: 29px;
+}
+
+/* LOCATION */
+.stp2__location{
+  border-bottom: 0.5px solid #dcdcdc;
+  border-right: 0.5px solid #dcdcdc;
+  border-left: 0.5px solid #dcdcdc;
+  margin-bottom: 46px;
+}
+
+.stp2__celendar{
+  width: 142px;
+  height: 33px;
+  border-top: none;
+  background-color: #fff;
+  border-bottom: none;
+  border-left: none;
+}
+
+.stp2__share{
+  width: 83px;
+  height: 33px;
+  border-top: none;
+  border-left: none;
+  background-color: #fff;
+  border-bottom: none;
+}
+
+.stp2__celendarr:focus {
+    outline: none;
+    cursor: pointer;
+}
+
+.stp2__celendarr:hover {
+  text-decoration: none;
+  color: #56ab0a;
+}
+
+/* FOOTER */
+
+.stp2__footer{
+  height: 122px;
+  background: #f7f7f7;
+}
+
+.stp2__footerwrap{
+  padding: 35px 43px 0 43px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stp2__footertext{
+  text-decoration: underline;
+  padding-left: 10px;
+  line-height: 1,5;
+}
+
+.stp2__footertext:hover{
+  text-decoration: none;
+  color: #56ab0a;
+}
+
+.stp2__footertext2{
+  margin-left: 23px;
+  margin-top: 10.5px;
+}
+
+a.stp2__a:hover{
+  color: #000;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px){
+  .stp2__celendar {
+    height: 28px;
+  }
+  .stp2__share{
+    height: 28px;
+  }
+}

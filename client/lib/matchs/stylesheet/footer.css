@@ -1,0 +1,71 @@
+/* FOOTER */
+.footer{
+  display: block;
+}
+
+.footer__{
+  padding-top: 22px;
+  border-top: 0.5px solid #dcdcdc;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* LEFT */
+.footer__left{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 1;
+}
+
+/* LOGO */
+.footer__left-logo:hover{
+  color:#56ab0a;
+  text-decoration: none;
+}
+
+.footer__left-brand:hover{
+  color:#56ab0a;
+  text-decoration: none;
+}
+
+.footer__left-brand{
+margin-left:7px;
+}
+
+/* NAV */
+
+.footer__left-ul{
+  margin-left:55px;
+  display: flex;
+  list-style: none;
+}
+
+.footer__left-li{
+  padding-right:23px;
+}
+
+.footer__left-a:hover{
+  color:#56ab0a;
+  text-decoration: none;
+}
+
+/* RIGHT */
+.footer__right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.footer__rightlogo{
+  margin-left:12px;
+}
+
+.footer__rightlogo:hover{
+  color:#56ab0a;
+  text-decoration: none;
+}
+
+/* COPYRIGHT */
+.footer__copyright{
+  padding: 35px 0;
+}
