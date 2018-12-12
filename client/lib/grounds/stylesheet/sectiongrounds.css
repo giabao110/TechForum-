@@ -1,22 +1,51 @@
 /* LAYOUT */
 .sectionground-div-row{
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   justify-content: space-between;
-  margin-bottom: 31px;
+  /* margin-bottom: 31px; */
   flex-wrap: wrap;
-  margin-top:30px;
+  margin-top: 10px;
+  flex: 0 0 calc(100%/3);
+}
+
+.sectionground-top{
+  display: flex;
+  justify-content: space-between;
 }
 
 /* GROUP */
+
+.sectionground{
+  background: #EEEEEE;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.sectionground-group2{
+  display: flex;
+  /* flex-direction: column; */
+  /* width: calc(((100%/3))*2); */
+  /* height: 285px; */
+  border-bottom: 1px solid #dcdcdc;
+  /* flex: 0 0 calc(100%/3); */
+  /* margin-bottom: 10px; */
+}
+
+.sectionground-group1{
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  flex: 0 0 32%;
+}
+
 .sectionground-group{
   display: flex;
   flex-direction: column;
-  width: 297px;
-  height: 285px;
-  border: 1px solid #dcdcdc;
-  flex: 0 0 30%;
-  margin-bottom: 31px;
+  width: 49.5%;
+  height: fit-content;
+  background: #ffffff;
 }
 
 .sectionground-groupwhile{
@@ -26,12 +55,23 @@
   height: 10px;
   border: 1px solid #ffffff;
   flex: 0 0 30%;
-  margin-bottom: 31px;
+
 }
 /* GROUP IMG*/
 .sectionground-img{
-  height:183px ;
+  height: 300px ;
 }
+
+.sectionground-img1{
+  height: 200px ;
+}
+
+.sectionground-img2{
+  height: 156px;
+  width: 252px;
+  padding: 10px;
+}
+
 .sectionground-imgg{
   width:100%;
   height:100%;
@@ -39,11 +79,38 @@
 
 /* GROUP CONTENT*/
 .sectionground-content{
-  height:100px;
-  padding: 20px 17px 22px 19px;
+  height: fit-content;
+  padding: 10px 10px;
   display: flex;
   flex-direction: column;
 }
+
+.sectionground-contentspan{
+  line-height: 26px;
+  height: 54px;
+  display: block;
+}
+
+.sectionground-contentspan1{
+  line-height: 24px;
+}
+
+
+.sectionground-content2{
+  height: fit-content;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionground-content1{
+  height: fit-content;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+   
 /* GROUP CONTENT LEFT */
 .sectionground-content-info{
   display: flex;
@@ -69,4 +136,39 @@
 .sectionground-location{
   max-width: 184px;
   overflow: hidden;
+}
+
+
+
+/* NEW */
+
+.sectionground-div{
+  display: flex;
+  justify-content: start;
+}
+
+.sectionground-div-tag{
+  width: calc(100%/3);
+  padding: 0 12px 12px 12px;
+  border-top: solid 6px #56ab09;
+  background: #EEEEEE;
+}  
+
+.sectionground-div-collumn{
+  width: calc((100%/3)*2);
+}
+
+.sectionground-title{
+  display: block;
+  text-transform: uppercase;
+  line-height: 21px;
+  border-bottom: 1px solid #dcdcdc;
+  background: white;
+  padding: 28px 12px;
+}
+
+.sectionground-div-child{
+display: block;
+padding: 12px 12px;
+background: white;
 }

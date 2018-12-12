@@ -1,35 +1,36 @@
-.boldRoboto {
-    font-family: 'Roboto';
-    font-weight: 500;
+.bold {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
     font-style: normal;
 }
 
 .bold-italic {
-    font-family: 'Ubuntu';
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-style: italic;
 }
 
 .italic {
-    font-family: 'Ubuntu';
+    font-family: 'Roboto', sans-serif;
     font-weight: normal;
     font-style: italic;
 }
 
 .light{
-    font-family: 'Ubuntu';
+    font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-style: normal;
 }
 
 .medium {
-    font-family: 'Ubuntu';
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-style: normal;
 }
 
 .regular {
-    font-family: 'Ubuntu';
+    font-family: 'Roboto', sans-serif;
     font-weight: normal;
     font-style: normal;
 }
+

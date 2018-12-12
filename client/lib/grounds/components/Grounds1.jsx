@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import ReadMoreReact from 'read-more-react';
 import  Rate from '../../components/Rating';
 
-export default class Grounds extends React.Component {
+export default class Grounds1 extends React.Component {
     render() {
       return (
-      <div className="sectionground-group">
-        <div className="sectionground-img">
+      <div className="sectionground-group1">
+        <div className="sectionground-img1">
           <div className="hovereffect">
             <Link to={`/Grounddetail/${this.props.grounds._id._str}`}>
             <img className="sectionground-imgg" src={this.props.grounds.image} alt=""/>
@@ -25,9 +25,9 @@ export default class Grounds extends React.Component {
          
           </Link>
         </div>
-        <div className="sectionground-content">
+        <div className="sectionground-content1">
             <div className="sectionground-content-title regular">
-              <span className="sectionground-contentspan f_34 g_3">{this.props.grounds.namesta}</span>
+              <span className="sectionground-contentspan1 f_34 g_3">{this.props.grounds.namesta}</span>
             </div>
             <div className="sectionground-content-info">
               <div className="sectionground-location f_24 g_1">

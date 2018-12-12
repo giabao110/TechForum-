@@ -2,7 +2,11 @@
 
 .nav{
   background-color: #000000;
-}
+} 
+
+.navtopbar{
+  background-color: #232323;
+} 
 
 .nav__wrap {
 	display: flex;
@@ -50,8 +54,8 @@ position: relative;
 /* SEARCH */
 .nav__search {
 	display: block;
-	width: 224px;
-	height: 23px;
+  width: 245px;
+  height: 30px;
 	padding: 10px 0 10px 29px;
 	color:  #ebebeb;
 	background-color: #232323;
@@ -102,7 +106,7 @@ position: relative;
   border-radius: 2px;
   background-color: #56ab0a;
   color: #fff;
-  margin: -12px 0 0 -3px;
+  margin: -11px -8px 1px 0px;
 }
 
 /* USER */
@@ -169,13 +173,38 @@ a.login-link-text#login-name-link{
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
-    color: #16181b;
-    text-decoration: none;
-    background-color: #56ab09 !important;
-    color: #fff !important;
+  color: #16181b;
+  text-decoration: none;
+  background-color: #56ab09 !important;
+  color: #fff !important;
 }
 
 .dropdown-toggle{
   cursor: pointer;
 }
 
+.nav__topbar{
+  display: flex;
+  padding: 6px 0px;
+  max-width: 1224px;
+  margin: auto;
+  background-color: #232323;
+}
+
+.topbar{
+  flex: 0 0 auto;
+  margin: 0 12px;
+  color: #c9c9c9;
+}
+
+.topbarright{
+  flex: 0 0 auto;
+  margin: 0px 12px;
+  padding-left: 26px;
+  color: #c9c9c9;
+  border-left: solid 0.5px #c9c9c9; 
+}
+
+.navdiv{
+  background: black;
+}

@@ -49,41 +49,42 @@ class Navigation extends Component {
           avt = <img className="nav__user-img" src={currentUser.profile.avt} alt=""/>;
         }
         if (currentUser.profile.roles == "user") {
-          dashboard = <li><Link to="*">Messages</Link></li>; 
+          dashboard = <li><Link to="*">Thông báo</Link></li>; 
           avt = <img className="nav__user-img" src={currentUser.profile.avt} alt=""/>;
         }
       } 
       return(
-      <div className="nav boldRoboto">
-        <div className="football__wraper">
+        <div className="navdiv">
+      <div className="nav">
+        <div className="football__wrapernav">
           <div className="nav__wrap">
             <nav className="nav__items">
               <div>
                 <span className="icon-brand"></span>
-                <Link to="/" className="nav__logo-brand-name regular f_36" href="/">
-                Tech<span className="boldRoboto">Forum</span></Link>
+                <Link to="/" className="nav__logo-brand-name f_36" href="/">
+                Tech<span className="bold">Forum</span></Link>
               </div>
               <form className="padding padding-search form-inline ">    
-                <input className="nav__search regular f_22" type="search" placeholder="Tìm bài viết, sản phẩm, nhóm, ..." aria-label="Search" />
+                <input className="nav__search regular f_24" type="search" placeholder="Tìm bài viết, sản phẩm, nhóm, ..." aria-label="Search" />
               </form>
-              <ul className="nav__links medium f_22">
+              <ul className="nav__links bold f_24">
                 <li>
-                  <Link to="/matchs" className="boldRoboto">
-                  Forum</Link>
-                </li>
-                <li>
-                  <Link to="/">
-                  Camera</Link>
-                </li>
-                <li>
-                  <Link to="*">
-                  Car</Link>
+                  <Link to="/matchs">
+                  DIỄN ĐÀN</Link>
                 </li>
                 <span className="regular f_20 ">{this.props.incompleteCount}</span>
                 {dashboard}
                 <li>
+                  <Link to="/">
+                  CAMERA</Link>
+                </li>
+                <li>
                   <Link to="/profile">
-                  Other</Link>
+                  MUA BÁN</Link>
+                </li>
+                <li>
+                  <Link to="*">
+                  XE</Link>
                 </li>
               </ul>
             </nav>
@@ -91,7 +92,7 @@ class Navigation extends Component {
               <div className="nav__user">
                 {avt}
               </div>
-              <div className="dropdown medium f_22 g_5">
+              <div className="dropdown medium f_24 g_5">
                 <a className="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 { loggedIn ? currentUser.username : '' }
                 </a>
@@ -104,9 +105,21 @@ class Navigation extends Component {
               </div>
             </div>
           </div>
+          
         </div>
       </div>
-    
+      <div className="navtopbar">
+            <div className="football__wrapertop">
+              <div className="nav__topbar">
+                <li className="topbar medium f_24">Android</li>
+                <li className="topbar medium f_24">iOS</li>
+                <li className="topbar medium f_24">MacOS</li>
+                <li className="topbar medium f_24">Windows</li>
+                <div className="topbarright medium f_24">Không có sự kiện nào sắp diễn ra</div>
+              </div>
+              </div>
+              </div>
+    </div>
       );
     }
   } 
@@ -117,4 +130,3 @@ class Navigation extends Component {
       currentUser: Meteor.user(),
     };
   })(Navigation);
-
