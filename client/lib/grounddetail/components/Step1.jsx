@@ -67,7 +67,7 @@ export default class App extends React.Component {
               </div>
               <div className="stp__btn regular f_22">
                 <button className="stp1__next"></button>
-                <button className="stp1__cen">{this.props.month.toUpperCase()} {this.props.year}</button>
+                {/* <button className="stp1__cen">{this.props.month.toUpperCase()} {this.props.year}</button> */}
                 <button className="stp1__pre"></button>
               </div>
             </div>

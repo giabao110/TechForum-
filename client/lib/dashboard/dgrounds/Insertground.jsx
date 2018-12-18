@@ -65,7 +65,7 @@ export default class Insertground extends React.Component {
 
   render() {
     // const item = this.props.edit;
-    console.log(this.date);
+    // console.log(this.date);
     // if(this.props.edit._id !== ""){
     //     this.price = item.price;
     // }

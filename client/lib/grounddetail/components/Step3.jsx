@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import { Link } from "react-router-dom";
 import { Meteor } from 'meteor/meteor';
+import { MatchsCol } from '../../../../imports/api/matchs';
+import { CommentCol } from '../../../../imports/api/comments';
+import { withTracker } from 'meteor/react-meteor-data';
+import  Rate from '../../components/Rating.jsx';
+import Matchs from '../../matchs/components/section/Matchs.jsx';
 
 const customStyles = {
   content : {
@@ -12,8 +17,8 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -52%)',
-    width                 : '695px',
-    height             : '646px',
+    width                 : '682px',
+    height             : '282px',
     borderRadius          :0,
     padding: '0px'
   }
@@ -21,7 +26,7 @@ const customStyles = {
 
 Modal.setAppElement('body');
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -32,6 +37,20 @@ export default class App extends React.Component {
   openModal = (e) => {
     e.preventDefault();
     this.setState({modalIsOpen: true});
+  
+  }
+
+  afterOpenModal = () =>  {
+    this.subtitle.style.color = '#f00';
+  }
+
+  renderabc = () =>  {
+    this.setState({modalIsOpen: false});
+  }
+
+  closeModal = (e) =>  {
+    let currentUser = this.props.currentUser;
+    this.setState({modalIsOpen: false});
     const name = this.props.name;
     const dayop = this.props.dayop;
     const starttime = this.props.starttime;
@@ -41,23 +60,34 @@ export default class App extends React.Component {
     const day = this.props.date;
     const location = this.props.location;
     Meteor.call('matchs.insert',name,dayop,starttime,endtime,players,rating,day,location);
+    console.log("ok")
   }
 
-  afterOpenModal = () =>  {
-    this.subtitle.style.color = '#f00';
-  }
-
-  closeModal = () =>  {
+  closeModalcancel = () =>  {
     this.setState({modalIsOpen: false});
   }
 
   render() {
+    let currentUser = this.props.currentUser;
+    let userDataAvailable = (currentUser !== undefined);
+    let loggedIn = (currentUser && userDataAvailable);
+    let name,role;
+    if (loggedIn) {
+      if (currentUser.profile.roles == "admin")
+      {
+        name = <p className="section__title regular f_34">{currentUser.profile.teamname}</p>
+        role =   <p className="section__stadium regular f_24">{currentUser.profile.roles}</p>
+      }
+      if (currentUser.profile.roles == "user") {
+        name = <p className="section__title regular f_34">{currentUser.profile.teamname}</p>
+        role =   <p className="section__stadium regular f_24">{currentUser.profile.roles}</p>
+      }
+    } 
     return (
       <div>
-        <button onClick={this.openModal} className="stp__3-btn regular f_28 wt">
-        <span className="icon-next"></span>
-        <span className="stp__3-btntext" > FINISH </span>
-        </button>
+        <li className="nav__links bold f_24 g_5">
+        <button className="nav__links bold f_24 g_5" onClick={this.openModal} ><a>ĐĂNG BÀI</a></button>
+        </li>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -67,136 +97,62 @@ export default class App extends React.Component {
           >
           <h2 ref={subtitle => this.subtitle = subtitle}></h2>
           <div className="stp3__">
-            <p className="medium f_40"> Completed</p>
-            <div className="stp3__location">
-              <div className="stp3_locationleft">
-                <p className="stp3_locationcontent regular f_28 gr">{this.props.name}</p>
-                <p className="regular f_24 g_1">{this.props.location}</p>
+          <div className="section__abv">
+            <div className="section__abvleft">
+              <div className="section__abvleftdiv">
+                <img className="section__abv-leftimg" src={this.props.logo} alt="" />
               </div>
-              <div className="stp3_locationright section__time">
-                <div className="stp3_location10 light f_60 gr">{this.props.date}</div>
+              <span className="section__abv-leftrate">
+                <Rate rate={Number(this.props.rate)}/>
+              </span>
+            </div>
+            <div className="section__formabv-right">
+              {name}
+              {role}
+              <input type="textarea" className="form-control" ref={this.content} placeholder="Nhập nội dung " />
+              {/* <div className="section__time">
+                <div className="section__time-number light f_60 gr">{moment(day).format('DD')}</div>
                 <div className="section__time-day regular f_24"> 
-                  <span className="section__time-dayabv">{this.props.day}</span>
-                  <span className="section__time-daybl">{this.props.month} {this.props.year}</span>
+                  <span className="section__time-dayabv">{moment(day).format('dddd')}</span>
+                  <span className="section__time-daybl">{moment(day).format('MMM')} {moment(day).format('YYYY')}</span>
                 </div>
                 <div className="section__time-from regular f_24">
                   <span className="section__time-dayabv">From:</span>
                   <span className="section__time-dayabv">To:</span>
                 </div>
-                <div className="stp3_times regular f_24 gr">
-                  <span className="section__time-dayabv">{this.props.starttime}</span>
-                  <span className="section__time-dayabv">{this.props.endtime}</span>
+                <div className="regular f_24 gr">
+                  <span className="section__time-dayabv">{this.props.matchs.starttime}</span>
+                  <span className="section__time-dayabv">{this.props.matchs.endtime}</span>
                 </div>
-              </div>
-            </div>
-            <hr className="sexy_line" />
-            <form className="form-inline ">
-              <input className="stp3__search italic f_22" type="search" placeholder="Search player or team..." aria-label="Search" />
-            </form>
-            <p className="stp3__suggest regular f_22 g_7">SUGGESTED TEAMS</p>
-            <div className="stp3__teamwrap">
-              <div className="stp3__teams">
-                <form className="stp3__teamsdiv" action="">
-                  <div className="stp3__teamslogo">
-                    <div className="stp3__teamsloogoimg">
-                      <img className="stp3__teamsloogoimgg" src="https://upload.wikimedia.org/wikipedia/vi/thumb/9/91/FC_Barcelona_logo.svg/180px-FC_Barcelona_logo.svg.png" alt=""/>
-                    </div>
-                  </div>
-                  <div>
-                    <p className="stp3__nameteams regular f_28 gr">FC Barcelona</p>
-                    <p className="regular f_22 g_8">Arístides Maillol, 08028</p>
-                  </div>
-                  <div>
-                    <span className="stp3__stick icon-stick"></span>
-                  </div>
-                </form>
-                <form className="stp3__teamsdiv" action="">
-                  <div className="stp3__teamslogo">
-                    <div className="stp3__teamsloogoimg">
-                      <img className="stp3__teamsloogoimgg" src="https://upload.wikimedia.org/wikipedia/vi/thumb/9/91/FC_Barcelona_logo.svg/180px-FC_Barcelona_logo.svg.png" alt=""/>
-                    </div>
-                  </div>
-                  <div>
-                    <p className="stp3__nameteams regular f_28 gr">FC Barcelona</p>
-                    <p className="regular f_22 g_8">Arístides Maillol, 08028</p>
-                  </div>
-                  <div>
-                    <span className="stp3__stick icon-stick"></span>
-                  </div>
-                </form>
-              </div>
-              <div className="stp3__teams">
-                <form className="stp3__teamsdiv" action="">
-                  <div className="stp3__teamslogo">
-                    <div className="stp3__teamsloogoimg">
-                      <img className="stp3__teamsloogoimgg" src="https://images-eu.ssl-images-amazon.com/images/I/71Pq6kR%2BHUL.png" alt=""/>
-                    </div>
-                  </div>
-                  <div>
-                    <p className="stp3__nameteams regular f_28 gr">Real Madrid C.F.</p>
-                    <p className="regular f_22 g_8">Avda. de Concha Espina </p>
-                  </div>
-                  <div>
-                    <span className="stp3__stick icon-stick"></span>
-                  </div>
-                </form>
-                <form className="stp3__teamsdiv" action="">
-                  <div className="stp3__teamslogo">
-                    <div className="stp3__teamsloogoimg">
-                      <img className="stp3__teamsloogoimgg" src="https://images-eu.ssl-images-amazon.com/images/I/71Pq6kR%2BHUL.png" alt=""/>
-                    </div>
-                  </div>
-                  <div>
-                    <p className="stp3__nameteams regular f_28 gr">Real Madrid C.F.</p>
-                    <p className="regular f_22 g_8">Avda. de Concha Espina </p>
-                  </div>
-                  <div>
-                    <span className="stp3__stick icon-stick"></span>
-                  </div>
-                </form>
-              </div>
-              <div className="stp3__teams">
-                <form className="stp3__teamsdiv" action="">
-                  <div className="stp3__teamslogo">
-                    <div className="stp3__teamsloogoimg">
-                      <img className="stp3__teamsloogoimgg" src="https://itviec.com/employers/zigvy/logo/social/zigvy-logo.jpg?reFbyyyi2emJ8RGLLrD3toSa" alt=""/>
-                    </div>
-                  </div>
-                  <div>
-                    <p className="stp3__nameteams regular f_28 gr">Zigvy Soccer Club</p>
-                    <p className="regular f_22 g_8">Phu Nhuan, HCM</p>
-                  </div>
-                  <div>
-                    <span className="stp3__stick icon-stick"></span>
-                  </div>
-                </form>
-                <form className="stp3__teamsdiv" action="">
-                  <div className="stp3__teamslogo">
-                    <div className="stp3__teamsloogoimg">
-                      <img className="stp3__teamsloogoimgg" src="https://itviec.com/employers/zigvy/logo/social/zigvy-logo.jpg?reFbyyyi2emJ8RGLLrD3toSa" alt=""/>
-                    </div>
-                  </div>
-                  <div>
-                    <p className="stp3__nameteams regular f_28 gr">Zigvy Soccer Club</p>
-                    <p className="regular f_22 g_8">Phu Nhuan, HCM</p>
-                  </div>
-                  <div>
-                    <span className="stp3__stick icon-stick"></span>
-                  </div>
-                </form>
-              </div>
+              </div> */}
             </div>
           </div>
-          <div></div>
+          {/* <div className="section__bl">
+            <div className="section__blleft">
+              <span className="icon-king"></span>
+              <span className="section__blleft-user">
+              <img className="section__blleft-userimg" src={this.props.matchs.avt} alt="" />
+              </span>
+              <span className="regular f_24">{this.props.matchs.username}</span>
+            </div>
+            <div className="section__blright">
+              <img src="img/topbar/people.svg" className="section__blrightlg"></img>
+              <span className="regular gr f_24">{this.props.matchs.players} Players</span>
+            </div>
+            {modal}
+          </div> */}
+        </div>
+          
+    
           <div className="stp2__footer">
             <div className="stp2__footerwrap">
               <div className="stp3__footerwrap">
                 <span className="icon-cancel"></span>
-                <a onClick={this.closeModal} href="" className="stp2__footertext regular f_28 gr">Cancel</a>
+                <a onClick={this.closeModalcancel} href="" className="stp2__footertext regular f_28 gr">Cancel</a>
               </div>
               <Link className="stp2__a" to="/matchs">
               <button onClick={this.closeModal} className="stp3__footerbtn regular f_28 wt">
-              <span className="icon-next"></span>
+
               <span className="stp__2-btntext"> Send Invite </span>
               </button>
               </Link>
@@ -207,3 +163,13 @@ export default class App extends React.Component {
     );
   }
 }
+export default withTracker(() => {
+  Meteor.subscribe('users');
+  Meteor.subscribe('matchsshow');
+  Meteor.subscribe('comments');
+  return {
+    currentUser: Meteor.user(),
+    matchs: MatchsCol.find({}, { sort: { createdAt: -1 } }).fetch(),  
+    comments: CommentCol.find({}, { sort: { createdAt: -1 } }).fetch(),  
+  };
+})(App);

@@ -54,7 +54,8 @@ class Register extends React.Component {
                     roles: "user",
                     teamname: teamname,
                     logoteam: "https://i0.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1",
-                    avt:"https://i0.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
+                    avt:"https://i0.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1",
+                    rating: "4"
                     }
       }, (error) => {
             if (error) {

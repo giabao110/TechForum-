@@ -3,6 +3,7 @@ import	Modal from './Modal';
 import  Rate from '../../../components/Rating';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
+import { MatchsCol } from '../../../../../imports/api/matchs';
 
 class Matchs extends Component { 
   constructor(props){
@@ -17,52 +18,28 @@ class Matchs extends Component {
   }
 
   render() {
-    let day = this.props.matchs.dateop.toString();
-    let starttime = this.props.matchs.starttime;
-    let endtime = this.props.matchs.endtime;
-    let currentUser = this.props.currentUser;
-    let userDataAvailable = (currentUser !== undefined);
-    let loggedIn = (currentUser && userDataAvailable);
-    let modal;
-    if (loggedIn) {
-      if (currentUser.username !== this.props.matchs.username)
-      {
-        modal = <Modal  
-        location={this.props.matchs.location}
-        name={this.props.matchs.team} 
-        logo={this.props.matchs.logo}
-        user={this.props.matchs.username}
-        players={this.props.matchs.players}
-        stadium={this.props.matchs.name}
-        avt={this.props.matchs.avt}
-        day = {moment(day).format('dddd')}
-        date = {moment(day).format('DD')}
-        month = {moment(day).format('MMM')}
-        year = {moment(day).format('YYYY')}
-        starttime = {this.props.matchs.starttime}
-        endtime = {this.props.matchs.endtime}
-        rate = {parseInt(this.props.matchs.rating)}
-      />
-      }
-    } 
+    let ngaydang = moment(this.props.matchss.createdAt).format("Do YY, h:mm:ss a"); 
+        this.props.matchss.createdAt = ngaydang;
+        let myStr = this.props.matchss.content;
     return ( 
       <div className="section_div">
         <div className="section__form">
           <div className="section__abv">
             <div className="section__abvleft">
               <div className="section__abvleftdiv">
-                <img className="section__abv-leftimg" src={this.props.matchs.logo} alt="" />
+                <img className="section__abv-leftimg" src={this.props.matchss.avt} alt="" />
               </div>
               <span className="section__abv-leftrate">
-                <Rate rate={Number(this.props.matchs.rating)}/>
+                {/* <Rate rate={Number(this.props.matchs.rating)}/> */}
               </span>
             </div>
             <div className="section__formabv-right">
-              <p className="section__title regular f_34">{this.props.matchs.team}</p>
-              <p className="section__stadium regular f_24">
-                <span className="icon-logogrey section__stadiumimg"></span> {this.props.matchs.name}
-              </p>
-              <div className="section__time">
+              <p className="section__title regular f_34">{this.props.matchss.team}</p>
+              <div className="section__stadium regular f_24">
+              <span className="f_22 g_3" >Người đăng: <span className=" gr f_24" >{this.props.matchss.author}</span>          
+              <span className="info__right-hour f_22 g_3">  Ngày đăng: <span className="gr f_24">{this.props.matchss.createdAt}</span></span></span>
+              </div>
+              {/* <div className="section__time">
                 <div className="section__time-number light f_60 gr">{moment(day).format('DD')}</div>
                 <div className="section__time-day regular f_24"> 
                   <span className="section__time-dayabv">{moment(day).format('dddd')}</span>
@@ -76,10 +53,10 @@ class Matchs extends Component {
                   <span className="section__time-dayabv">{this.props.matchs.starttime}</span>
                   <span className="section__time-dayabv">{this.props.matchs.endtime}</span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
-          <div className="section__bl">
+          {/* <div className="section__bl">
             <div className="section__blleft">
               <span className="icon-king"></span>
               <span className="section__blleft-user">
@@ -92,7 +69,7 @@ class Matchs extends Component {
               <span className="regular gr f_24">{this.props.matchs.players} Players</span>
             </div>
             {modal}
-          </div>
+          </div> */}
         </div>
       </div>
     );
@@ -101,7 +78,9 @@ class Matchs extends Component {
 
 export default withTracker(() => {
   Meteor.subscribe('users');
+  Meteor.subscribe('matchs');
   return {
     currentUser: Meteor.user(),
+    matchs: MatchsCol.find({}, { sort: { createdAt: -1 } }).fetch(),  
   };
 })(Matchs);

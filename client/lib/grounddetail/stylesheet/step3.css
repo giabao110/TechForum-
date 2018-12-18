@@ -199,3 +199,8 @@
 .stp3_times{
   width: 70px;  
 }
+
+li [type=reset], [type=submit], button, html [type=button] {
+  -webkit-appearance: button-bevel !important;
+  background: black;
+}

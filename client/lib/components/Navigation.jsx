@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { withTracker } from 'meteor/react-meteor-data';
 import { MatchsCol } from '../../../imports/api/matchs';
 import { Meteor } from 'meteor/meteor';
+import Step3 from '../grounddetail/components/Step3.jsx';
+import { GroundsCol } from '../../../imports/api/grounds';
+import { withRouter } from "react-router-dom";
 
 class Navigation extends Component {
   constructor(props){
@@ -41,16 +44,22 @@ class Navigation extends Component {
       let currentUser = this.props.currentUser;
       let userDataAvailable = (currentUser !== undefined);
       let loggedIn = (currentUser && userDataAvailable);
-      let dashboard,avt;
+      let dashboard,avt,them;
       avt = <Link to="/login" className="bold f_24 g_5">ĐĂNG NHẬP</Link>;
       if (loggedIn) {
         if (currentUser.profile.roles == "admin")
         {
           dashboard = <li><Link to="/dashboard">Dashboard</Link></li>;
+          them = <Step3  logo={currentUser.profile.avt}  
+          rate={currentUser.profile.rating}
+/>; 
           avt = <img className="nav__user-img" src={currentUser.profile.avt} alt=""/>;
         }
         if (currentUser.profile.roles == "user") {
-          dashboard = <li><Link to="*">Thông báo</Link></li>; 
+          dashboard = <li><Link to="/profile">Thông tin</Link></li>;
+          them =   <Step3  logo={currentUser.profile.avt}  
+                                rate={currentUser.profile.rating}
+          />; 
           avt = <img className="nav__user-img" src={currentUser.profile.avt} alt=""/>;
         }
 
@@ -79,15 +88,12 @@ class Navigation extends Component {
                   DIỄN ĐÀN</Link>
                 </li>
                 <span className="regular f_20 ">{this.props.incompleteCount}</span>
-                <li>
-                  <Link to="*">
-                  XE</Link>
-                </li>
-                <li>
+                {/* <li>
                   <Link to="/profile">
                   THÔNG TIN</Link>
-                </li>
+                </li> */}
                 {dashboard}
+                {them}
               </ul>
             </nav>
             <div className="nav__right">
@@ -126,10 +132,12 @@ class Navigation extends Component {
       );
     }
   } 
-  export default withTracker(() => {
+  export default withRouter(withTracker((props) => {
     Meteor.subscribe('matchs');
+    Meteor.subscribe('grounds');
     return {
       incompleteCount: MatchsCol.find({}).count(),
       currentUser: Meteor.user(),
+      grounds: GroundsCol.find({_id: new Mongo.ObjectID(props.match.params.GroundID)}, { sort: { createdAt: -1 } }).fetch(),
     };
-  })(Navigation);
+  })(Navigation))

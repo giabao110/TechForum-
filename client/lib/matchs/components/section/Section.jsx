@@ -31,7 +31,7 @@ class Section extends Component {
       matchs = matchs.filter(match => match.team.toLowerCase().includes(this.state.strSearch.toLowerCase()));
       }
 
-      return matchs.map((matchs) =><Matchs key={matchs._id} matchs={matchs}/>)
+      return matchs.map((matchss) =><Matchs key={matchss._id} matchss={matchss}/>)
     }
 
     handleSearch = (value) =>{

@@ -6,6 +6,8 @@ import '../imports/api/comments';
 
 import '../imports/api/historys';
 
+import '../imports/api/matchsshow';
+
 
 
 

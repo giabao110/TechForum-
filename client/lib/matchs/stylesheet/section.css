@@ -1,10 +1,9 @@
 /* DIV */
 .section_div{
-  /* flex: 0 0 50%; */
   margin-bottom: 30px;
   display: inline-block;
-  width: calc(50% - 15px);
-  margin-right: 15px;
+  width: 100%;
+  padding: 0px 33px;
 }
 .section_div:nth-child(even) {
   margin-left: 15px;
@@ -19,8 +18,8 @@
 
 .section__form{
   display: flex;
-  max-width: 463px;
-  max-height: 159px;
+  width: 100%;
+  height: 159px;
   border: 1px solid #dcdcdc;
   display: block;
 }
@@ -29,7 +28,7 @@
   display: flex;
   position: relative;
   height: 123px; 
-  border-bottom: 0.5px solid #dcdcdc;
+  /* border-bottom: 0.5px solid #dcdcdc; */
   background: #fbfbfb;
   overflow: hidden;
 }
@@ -77,7 +76,7 @@
 }
 
 .section__stadium{
-  margin-top:10px;
+  margin-top:3  px;
   color:#737373;
 }
 

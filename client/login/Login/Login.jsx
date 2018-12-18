@@ -32,18 +32,6 @@ class Login extends React.Component {
           }
         });  
       }
-      facebook = (e) => {
-        Meteor.loginWithFacebook({
-          requestPermissions: ['user_friends', 'public_profile', 'email']
-        }, (err) => {
-          if (err) {
-            throw new Meteor.Error("Facebook login failed");
-          } else {
-            console.log('FACEBOOK: ',Meteor.user());
-            this.props.history.push('/')
-          }
-        });
-      }
     }
   render() {
       return (

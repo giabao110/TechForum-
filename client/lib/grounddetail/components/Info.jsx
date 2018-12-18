@@ -21,11 +21,6 @@ class Info extends React.Component {
         let ngaydang = moment(this.props.grounds[0].createdAt).format("MMM Do YY"); 
         this.props.grounds[0].createdAt = ngaydang;
         let myStr = this.props.grounds[0].content;
-
-        console.log(myStr.replace("",  "&nbsp" )); 
-        this.props.grounds[0].content = myStr;
-
-
         return (
         <div>
           <title className="info__right-title title medium f_60">{this.props.grounds[0].namesta}</title>
@@ -37,9 +32,9 @@ class Info extends React.Component {
           <img className="info__left-img" src={this.props.grounds[0].image} alt=""/>
           <div className="infoo">
           <hr className="info__right-rate-border"/>
-          <a href="tags/apple/" class="Tinhte_XenTag_TagLink">Apple</a> cho biết họ sẽ nâng cấp phần mềm của <a href="tags/iphone/" class="Tinhte_XenTag_TagLink">iPhone</a> tại <a href="tags/trung-quoc/" class="Tinhte_XenTag_TagLink">Trung Quốc</a> trong thời gian tới để cố gắng giải quyết vấn đề tranh chấp pháp lý đe doạ ngăn công ty bán các dòng iPhone cũ hơn.<br />
+          <a href="tags/apple/" className="Tinhte_XenTag_TagLink">Apple</a> cho biết họ sẽ nâng cấp phần mềm của <a href="tags/iphone/" className="Tinhte_XenTag_TagLink">iPhone</a> tại <a href="tags/trung-quoc/" className="Tinhte_XenTag_TagLink">Trung Quốc</a> trong thời gian tới để cố gắng giải quyết vấn đề tranh chấp pháp lý đe doạ ngăn công ty bán các dòng iPhone cũ hơn.<br />
 <br />
-Cùng với nhà cung cấp Chip lâu năm của họ - <a href="tags/qualcomm/" class="Tinhte_XenTag_TagLink">Qualcomm</a> đã đấu tranh trước toà về việc Apple sử dụng công nghệ của Qualcomm vào ngày 30 tháng 11 vừa qua. Toà án phán quyết Apple phải ngưng bán các mẫu iPhone cũ tại Trung Quốc vì nó đã <a href="tags/vi-pham/" class="Tinhte_XenTag_TagLink">vi phạm</a> 2 <a href="tags/bang-sang-che/" class="Tinhte_XenTag_TagLink">bằng sáng chế</a> của Qualcomm. <br />
+Cùng với nhà cung cấp Chip lâu năm của họ - <a href="tags/qualcomm/" className="Tinhte_XenTag_TagLink">Qualcomm</a> đã đấu tranh trước toà về việc Apple sử dụng công nghệ của Qualcomm vào ngày 30 tháng 11 vừa qua. Toà án phán quyết Apple phải ngưng bán các mẫu iPhone cũ tại Trung Quốc vì nó đã <a href="tags/vi-pham/" className="Tinhte_XenTag_TagLink">vi phạm</a> 2 <a href="tags/bang-sang-che/" className="Tinhte_XenTag_TagLink">bằng sáng chế</a> của Qualcomm. <br />
 <br />
 Nhưng Apple cho biết họ sẽ không ngừng bán, họ đã lập luận rằng các điện thoại sẽ không chịu ảnh hưởng bởi phán quyết toà án vì họ đang chạy phần mềm mới cho các dòng iPhone, sẽ không còn liên quan đến vụ kiện trong phiên toà.<br />
 <br />
@@ -47,7 +42,7 @@ Trong thứ 6 vừa qua, Apple phán quyết sẽ cập nhật phần mềm cho 
 <br />
 Don Rosenberg, phó chủ tịch điều hành và cố vấn của Qualcomm, người đã tuyên bố Apple vi phạm tại toà án:<br />
 - &quot;Họ phải có nghĩa vụ pháp lý và phải ngưng bán iPhone tại Trung Quốc ngay lập tức&quot;<br />
-Qualcomm tuần này đã yêu cầu Toà án Nhân dân trung cấp Phúc Châu thực thi lệnh <a href="tags/cam-ban/" class="Tinhte_XenTag_TagLink">cấm bán</a> cho Apple.<br />
+Qualcomm tuần này đã yêu cầu Toà án Nhân dân trung cấp Phúc Châu thực thi lệnh <a href="tags/cam-ban/" className="Tinhte_XenTag_TagLink">cấm bán</a> cho Apple.<br />
 <br />
 Một luật sư của Qualcomm tại Trung Quốc nói với Thời Báo Tài chính tuần này rằng công ty cũng sẽ tìm kiếm lệnh cấm bán iPhone mới nhất của Apple chứ không chỉ các mẫu iPhone cũ, vì cho rằng họ cũng đang vi phạm bằng sáng chế của Qualcomm.<br />
 <br />
