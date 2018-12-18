@@ -14,7 +14,7 @@ class History extends React.Component {
       return (
       <div className="info__right">
         <div className="headerground__title">
-          <span className="regular f_40">History <span className="headerground__title-count f_24 g_3">( {this.props.incompleteCount} )</span></span>
+          <span className="regular f_40">Chủ đề khác <span className="headerground__title-count f_24 g_3">( {this.props.incompleteCount} )</span></span>
         </div>
         <div className="headerground-wrap">
           {this.renderHistorys()}

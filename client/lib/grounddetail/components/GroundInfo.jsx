@@ -10,7 +10,7 @@ export default class GroundInfo extends React.Component {
                 <div className="headerground__backicon icon-back2"></div>
             </Link>
           </div>
-          <title className="headerground__back-title light f_70">Ground Info</title>
+          <title className="headerground__back-title regular f_36">Trang chủ</title>
       </div>
       );
     }

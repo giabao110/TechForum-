@@ -9,9 +9,9 @@ export default class TextHistory extends React.Component {
           </div>
           <div className="headerground__history-content">
             <span className="headerground__history-content-name bold f_30">{this.props.history.name}</span>
-            <span className="headerground__history-content-day regular f_22 g_2">{this.props.history.time}</span>
-            <span className="headerground__history-content-teams regular f_24 g_2"><span className="gr">{this.props.history.teams}</span> Teams</span>
-            <span className="headerground__history-content-players regular f_24 g_2"><span className="gr">{this.props.history.players}</span> Players</span>
+            {/* <span className="headerground__history-content-day regular f_22 g_2">{this.props.history.time} chủ đề mới</span> */}
+            <span className="headerground__history-content-teams regular f_24 g_2"><span className="gr">{this.props.history.teams}</span> chủ đề mới</span>
+            <span className="headerground__history-content-players regular f_24 g_2"><span className="gr">#{this.props.history.name}</span></span>
           </div>
         </div>
       );

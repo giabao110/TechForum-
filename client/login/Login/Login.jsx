@@ -20,8 +20,8 @@ class Login extends React.Component {
         Meteor.loginWithPassword(user, pass, (error) => {
           if (error) {
             return swal({
-              title: "Email or password Incorect",
-              text: "Please try again or create an account",
+              title: "Tài khoản không chính xác !",
+              text: "Vui lòng nhập lại !!!",
               timer: 1700,
               showConfirmButton: false,
               type: "error"
@@ -32,34 +32,47 @@ class Login extends React.Component {
           }
         });  
       }
+      facebook = (e) => {
+        Meteor.loginWithFacebook({
+          requestPermissions: ['user_friends', 'public_profile', 'email']
+        }, (err) => {
+          if (err) {
+            throw new Meteor.Error("Facebook login failed");
+          } else {
+            console.log('FACEBOOK: ',Meteor.user());
+            this.props.history.push('/')
+          }
+        });
+      }
     }
   render() {
       return (
         <div className="bg-img">
-          <div className="bg-wrap">
+          <div className="bg-wrapregis">
             <nav className="login__logo nav__items">
               <span className="icon-brand"></span>
-              <Link to="/" className="nav__logo-brand-name regular f_36" href="/">
-              Football<span className="bold">Party</span></Link>
+              <Link to="/" className="nav__logo-brand-name f_36" href="/">
+                  Tech<span className="bold">Forum</span></Link>
             </nav>
           </div>
           <form className="login__frm" onSubmit={this.login}>
-            <div className="football__wraper">
+            <div className="football__wraperlogin">
               <div className="contain">
-                <h1 className="light f_70 wt">Sign In</h1>
+                <h1 className="light f_70 wt">Đăng nhập</h1>
                 <hr className="regis__hr">
                 </hr> 
-                <label htmlFor="email" className="regular f_24 wt">Username</label>
-                <input ref={this.username} type="text" className="regular f_22" placeholder="Username" name="username" required/>
-                <label htmlFor="psw"  className="regular f_24 wt">Password</label>
-                <input ref={this.password} type="password" className="regular f_22" placeholder="Enter Password" name="psw" required/>
-                <button type="submit" id="login-buttons-password" className="btn regular f_32 wt">Login</button>
+                <label htmlFor="email" className="regular f_24 wt">Tên đăng nhập</label>
+                <input ref={this.username} type="text" className="regular f_22" name="username" required/>
+                <label htmlFor="psw"  className="regular f_24 wt">Mật khẩu</label>
+                <input ref={this.password} type="password" className="regular f_22" name="psw" required/>
+                <button type="submit" id="login-buttons-password" className="btn regular f_32 wt">Đăng nhập</button>
                 <div className="login__">
                   <Link to="/forgot" className="light f_24 wt">
-                  Forgot Password</Link>
+                  Quên mật khẩu</Link>
                   <Link to="/register" className="light f_24  wt">
-                  Create Account</Link>
+                  Tạo tài khoản</Link>
                 </div>
+                <h1>{this.facebook}</h1>
               </div>
             </div>
           </form>

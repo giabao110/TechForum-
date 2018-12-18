@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 import { GroundsCol } from '../../../../imports/api/grounds';
-import Headergrounds from './Headergrounds';
+import { HistoryCol } from '../../../../imports/api/historys';
 import Grounds from './Grounds';
 import Grounds1 from './Grounds1';
 import Grounds2 from './Grounds2';
 import { Meteor } from 'meteor/meteor';
 import { Link } from "react-router-dom";
+import TextHistory from '../../grounddetail/components/TextHistory.jsx';
 
 class SectionGrounds extends Component {
   constructor(props) {
@@ -53,11 +54,16 @@ class SectionGrounds extends Component {
       strSortRate: value
     });
   }
+  renderHistorys() {
+    return this.props.historys.map((history) => (
+      <TextHistory key={history._id} history={history} />
+    ));
+  }  
 
     render() {
+
       return (
         <div>
-          
           {/* <Headergrounds onClickSearchGo={this.handleSearch} onClickSortRate={this.handleSortRate}/> */}
           <div className="sectionground">
             <div className="sectionground-top">
@@ -71,9 +77,14 @@ class SectionGrounds extends Component {
 
           <div className="sectionground-div">
             <div className="sectionground-div-tag">
-            <Link to="/" className="sectionground-title bold g_3 f_30" href="/">CỘNG ĐỒNG</Link>
+            {/* <Link to="/" className="sectionground-title bold g_3 f_30" href="/">CỘNG ĐỒNG</Link> */}
                 <div className="sectionground-div-child">
-                  dsadas
+                <div className="headerground__title">
+                <span className="bold g_3">CỘNG ĐỒNG </span><span className="regular f_24 g_3">( {this.props.incompleteCount} )</span>
+        </div>
+        <div className="headerground-wrap">
+          {this.renderHistorys()}
+        </div>
                 </div>
              
             </div>
@@ -89,9 +100,13 @@ class SectionGrounds extends Component {
 
   export default withTracker(() => {
     Meteor.subscribe('grounds');
+    Meteor.subscribe('historys');
     return {
       grounds: GroundsCol.find({}, { sort: { createdAt: 1}, skip:(0), limit: 2 }).fetch(),    
       groundss: GroundsCol.find({}, { sort: { createdAt: 1}, skip:(2),limit: 3 }).fetch(),    
       groundsss: GroundsCol.find({}, { sort: { createdAt: 1}, skip:(5) }).fetch(),    
+      historys: HistoryCol.find({}, { sort: { createdAt: -1 } }).fetch(),
+      incompleteCount: HistoryCol.find({ checked: { $ne: true } }).count(),
       };
 })(SectionGrounds);
+

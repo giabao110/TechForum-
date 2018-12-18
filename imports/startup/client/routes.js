@@ -9,7 +9,7 @@ import  DashboardMatchs from '../../../client/lib/dashboard/DashboardMatchs';
 import  DashboardGrounds from '../../../client/lib/dashboard/DashboardGrounds';
 import  Login from '../../../client/login/Login/Login';
 import  Profile from '../../../client/lib/profile/Profile';
-import  Forgot from '../../../client/login/Forgot/Forgot';
+import  Forgot from '../../../client/login/Forgot/Forgot.jsx';
 import  Notfound from '../../../client/lib/profile/Notfound';
 import  Register from '../../../client/login/Register/Register';
 import createHistory from 'history/createBrowserHistory';

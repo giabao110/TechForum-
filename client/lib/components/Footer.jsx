@@ -16,10 +16,10 @@ export default  class Footer extends React.Component {
                   <Link to="*" className="g_4 footer__left-a">
                   TRANG CHỦ</Link>
                 </li>
-                <li className="footer__left-li">
+                {/* <li className="footer__left-li">
                   <Link to="*" className="g_4 footer__left-a">
                   HỔ TRỢ</Link>
-                </li>
+                </li> */}
                 <li className="footer__left-li">
                   <Link to="*" className="g_4 footer__left-a">
                   ĐIỂU KHOẢN & QUY ĐỊNH</Link>

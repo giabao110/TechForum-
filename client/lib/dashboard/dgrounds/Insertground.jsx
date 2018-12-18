@@ -8,10 +8,10 @@ export default class Insertground extends React.Component {
       this.location = React.createRef();
       this.price = React.createRef();
       this.rating = React.createRef();
-      this.hoursfree = React.createRef();
+      this.hoursfree = moment().format('MMMM Do YYYY, h:mm:ss a');
       this.img = React.createRef();
       this.content = React.createRef();
-      this.date = React.createRef();
+      this.date = moment().format('MMMM Do YYYY, h:mm:ss a');
       this.status = React.createRef();
       this.starttime = React.createRef();
       this.endtime = React.createRef();
@@ -25,13 +25,14 @@ export default class Insertground extends React.Component {
     const location =  this.location.current.value;
     const price =  this.price.current.value;
     const rating = this.rating.current.value;
-    const hoursfree =  this.hoursfree.current.value;
+    const hoursfree = moment().format('MMMM Do YYYY, h:mm:ss a');
     const image =  this.img.current.value;
     const content =  this.content.current.value;
-    const dateop =  this.date.current.value;
+    const dateop =  moment().format('MMMM Do YYYY, h:mm:ss a');
     const starttime = this.starttime.current.value;
     const endtime = this.endtime.current.value;
     const players = this.players.current.value;
+    
     if (this.status.current.value == "true")
     {
       var bool = true;
@@ -48,23 +49,23 @@ export default class Insertground extends React.Component {
     this.names.current.value = "";
     this.location.current.value = "";
     this.price.current.value = ""; 
-    this.hoursfree.current.value = "";
+  this.date = "";
     this.img.current.value = "";
     this.content.current.value = "";
-    this.date.current.value = "";
+    this.date = "";
     this.starttime.current.value = "";
     this.endtime.current.value = "";
     this.players.current.value = "";
 
     return swal({
-      title: "Insert Successfully",
+      title: "Bài viết đã được đăng thành công !!!",
       timer: 1700,
   });
   }  
 
   render() {
     // const item = this.props.edit;
-    // console.log(item._id);
+    console.log(this.date);
     // if(this.props.edit._id !== ""){
     //     this.price = item.price;
     // }
@@ -73,7 +74,7 @@ export default class Insertground extends React.Component {
         <div className="header__">
           <div className="header__left">
             <div className="light f_70">
-              <span>Insert Grounds</span>
+              <span>Thêm bài viết</span>
             </div>
           </div>
         </div>
@@ -81,7 +82,7 @@ export default class Insertground extends React.Component {
         <form className="regular f_24 frm_grounds" onSubmit={this.InsertThisGrounds.bind(this)}>
           <div className="form-row">
             <div className="col-md-4 mb-3">
-              <label>Name Stadium</label>
+              <label>Tiêu đề bài viết</label>
               <input type="text" className="form-control" ref={this.names} placeholder="Name Stadium"/>
             </div>
             <div className="col-md-4 mb-3">
@@ -91,14 +92,14 @@ export default class Insertground extends React.Component {
           </div>
           <div className="form-row">
             <div className="col-md-8 mb-8">
-              <label >Content</label>
+              <label >Nội dung bài viết</label>
               <input type="text" className="form-control" ref={this.content} placeholder="Content" />
             </div>
           </div>
           <div className="form-row">
             <div className="col-md-4 mb-3">
-              <label >Date</label>
-              <input defaultValue="2018/10/02" type="date" ref={this.date} />
+              <label> Ngày viết</label>
+              {/* <input defaultValue="2018/10/02" type="date" ref={this.date} /> */}
             </div>
             <div className="col-md-2 mb-2">
               <label >Start time: </label>

@@ -5,6 +5,8 @@ import  Rate from '../../components/Rating';
 
 export default class Grounds1 extends React.Component {
     render() {
+      let hours = moment().startOf('day').fromNow(); 
+      this.props.grounds.createdAt = hours;
       return (
       <div className="sectionground-group1">
         <div className="sectionground-img1">
@@ -16,7 +18,7 @@ export default class Grounds1 extends React.Component {
                 {this.props.grounds.namesta}
               </p>
               <p className="regular f_40 wt">
-                <Rate rate={Number(this.props.grounds.rating)}/>
+                {/* <Rate rate={Number(this.props.grounds.rating)}/> */}
               </p>
             </div>
             </Link>
@@ -30,7 +32,7 @@ export default class Grounds1 extends React.Component {
               <span className="sectionground-contentspan1 f_34 g_3">{this.props.grounds.namesta}</span>
             </div>
             <div className="sectionground-content-info">
-              <div className="sectionground-location f_24 g_1">
+              <div className="sectionground-location f_24 gr">
                 <ReadMoreReact text={this.props.grounds.username}
                   min={80}
                   ideal={100}
@@ -38,7 +40,7 @@ export default class Grounds1 extends React.Component {
               </div>
               <div className="sectionground-content-right">
                 {/* <span className="f_36 gr">${this.props.grounds.price}.00</span> */}
-                <span id="hour" className="f_20 gr">/hour</span>
+                <span id="hour" className="f_20 gr">{this.props.grounds.createdAt}</span>
               </div>
             </div>
           </div>

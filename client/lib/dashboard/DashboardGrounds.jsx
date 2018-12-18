@@ -8,8 +8,8 @@ export default class DashboardGrounds extends React.Component {
         <div>
           <div className="dashboard header__">
             <div className="header__left">
-              <div className="light f_70">
-                <span>Dashboard Grounds</span>
+              <div className="bold f_70">
+                <span>Quản lí bài viết</span>
               </div>
             </div>
             <div className="header__right">
@@ -19,13 +19,13 @@ export default class DashboardGrounds extends React.Component {
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
-                <li className="btn-click medium f_32 nav-item active">
-                  <Link className="nav-link" to="/dashboard">
-                  Ground <span className="sr-only">(current)</span></Link>
+                <li className="btn-click regular f_32 nav-item active">
+                  <Link className="regular nav-link" to="/dashboard">
+                  Bài viết<table></table> <span className="sr-only">(current)</span></Link>
                 </li>
-                <li className="medium f_32 nav-item active">
-                  <Link className="nav-link" to="/dashboard/matchs">
-                  Matchs <span className="sr-only">(current)</span></Link>
+                <li className="regular f_32 nav-item active">
+                  <Link className="regular nav-link" to="/dashboard/matchs">
+                  Thành viên <span className="sr-only">(current)</span></Link>
                 </li>
               </ul>
             </div>

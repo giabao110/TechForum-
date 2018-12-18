@@ -111,9 +111,11 @@ position: relative;
 
 /* USER */
 .nav__user {
-	 width: calc(55px / 2);
+	 width: 96px;
    height: calc(55px / 2);
    margin-right: 10px;
+   text-align: right;
+  
 }
 
 .nav__user-img {

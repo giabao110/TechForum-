@@ -15,6 +15,21 @@ input.regis__input{
   width: 200px;
   margin-left: 15px;
 }
+input[type=date].regis__input{
+  width: 200px;
+  margin-left: 15px;
+  border-radius: unset;
+}
+
+div.regis__input{
+  width: 200px;
+  margin-left: 15px;
+  line-height: 36px;
+}
+
+label.regis_ck{
+  padding: 0px 10px;
+}
 
 .regis__hr{
   margin-top: 1rem;
@@ -39,6 +54,14 @@ input.regis__input{
   width: 100px;
 }
 
-
+.bg-wrapregis {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    line-height: 2;
+    justify-content: space-between;
+    position: relative;
+    background: black;
+}
 
 

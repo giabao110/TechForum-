@@ -4,69 +4,76 @@ import  Rate from '../../components/Rating';
 import { withRouter } from "react-router-dom";
 import { withTracker } from 'meteor/react-meteor-data';
 import { GroundsCol } from '../../../../imports/api/grounds';
-import ReadMoreReact from 'read-more-react';
+import TextHistory1 from './TextHistory1.jsx';
+
+
 
 class Info extends React.Component {
+ 
+  renderGrounds = () =>{
+    let groundss= this.props.groundss;
+    return groundss.map((groundss) =><TextHistory1 key={groundss._id} grounds={groundss}/>)
+  }
+
+
     render() {
         if(this.props.grounds.length === 0) return ''
-        let day = this.props.grounds[0].dateop.toString(),
-        starttime = this.props.grounds[0].starttime,
-        endtime = this.props.grounds[0].endtime;
+        let ngaydang = moment(this.props.grounds[0].createdAt).format("MMM Do YY"); 
+        this.props.grounds[0].createdAt = ngaydang;
+        let myStr = this.props.grounds[0].content;
+
+        console.log(myStr.replace("",  "&nbsp" )); 
+        this.props.grounds[0].content = myStr;
+
+
         return (
+        <div>
+          <title className="info__right-title title medium f_60">{this.props.grounds[0].namesta}</title>
+          <span className="title f_22 g_3" >Người đăng: <span className=" gr f_24" >{this.props.grounds[0].username}</span>          
+          <span className="info__right-hour f_22 g_3">  Ngày đăng:<span className="gr f_24">{this.props.grounds[0].createdAt}</span></span>
+          </span>
         <div className="info">
-          <div className="info__left">
-            <img className="info__left-img" src={this.props.grounds[0].image} alt=""/>
+        <div className="info__left">
+          <img className="info__left-img" src={this.props.grounds[0].image} alt=""/>
+          <div className="infoo">
+          <hr className="info__right-rate-border"/>
+          <a href="tags/apple/" class="Tinhte_XenTag_TagLink">Apple</a> cho biết họ sẽ nâng cấp phần mềm của <a href="tags/iphone/" class="Tinhte_XenTag_TagLink">iPhone</a> tại <a href="tags/trung-quoc/" class="Tinhte_XenTag_TagLink">Trung Quốc</a> trong thời gian tới để cố gắng giải quyết vấn đề tranh chấp pháp lý đe doạ ngăn công ty bán các dòng iPhone cũ hơn.<br />
+<br />
+Cùng với nhà cung cấp Chip lâu năm của họ - <a href="tags/qualcomm/" class="Tinhte_XenTag_TagLink">Qualcomm</a> đã đấu tranh trước toà về việc Apple sử dụng công nghệ của Qualcomm vào ngày 30 tháng 11 vừa qua. Toà án phán quyết Apple phải ngưng bán các mẫu iPhone cũ tại Trung Quốc vì nó đã <a href="tags/vi-pham/" class="Tinhte_XenTag_TagLink">vi phạm</a> 2 <a href="tags/bang-sang-che/" class="Tinhte_XenTag_TagLink">bằng sáng chế</a> của Qualcomm. <br />
+<br />
+Nhưng Apple cho biết họ sẽ không ngừng bán, họ đã lập luận rằng các điện thoại sẽ không chịu ảnh hưởng bởi phán quyết toà án vì họ đang chạy phần mềm mới cho các dòng iPhone, sẽ không còn liên quan đến vụ kiện trong phiên toà.<br />
+<br />
+Trong thứ 6 vừa qua, Apple phán quyết sẽ cập nhật phần mềm cho iPhone cũ tại Trung Quốc trong vòng 1 tuần tới để giải quyết mọi lo ngại, công ty nói vẫn sẽ tuân thủ theo đơn hàng tại Trung Quốc, sẽ không có chuyện ngưng bán các dòng iPhone cũ. Phần mềm mới sẽ thay đổi giao diện, chuyển đổi giữa các Apps, thay đổi kích thước và diện mạo của hình chụp.<br />
+<br />
+Don Rosenberg, phó chủ tịch điều hành và cố vấn của Qualcomm, người đã tuyên bố Apple vi phạm tại toà án:<br />
+- &quot;Họ phải có nghĩa vụ pháp lý và phải ngưng bán iPhone tại Trung Quốc ngay lập tức&quot;<br />
+Qualcomm tuần này đã yêu cầu Toà án Nhân dân trung cấp Phúc Châu thực thi lệnh <a href="tags/cam-ban/" class="Tinhte_XenTag_TagLink">cấm bán</a> cho Apple.<br />
+<br />
+Một luật sư của Qualcomm tại Trung Quốc nói với Thời Báo Tài chính tuần này rằng công ty cũng sẽ tìm kiếm lệnh cấm bán iPhone mới nhất của Apple chứ không chỉ các mẫu iPhone cũ, vì cho rằng họ cũng đang vi phạm bằng sáng chế của Qualcomm.<br />
+<br />
           </div>
-          <div className="info__right">
-            <title className="info__right-title medium f_60">{this.props.grounds[0].namesta}</title>
-            <p className="info__right-title-s regular f_24 g_1">{this.props.grounds[0].location}</p>
-            <Rate rate={Number(this.props.grounds[0].rating)}/>
-            <hr className="info__right-rate-border"/>
-            <div className="info__content-about">
-              <div className="info__right-user-div">
-                <img className="info__right-user" src="http://www.one-versus-one.com/img/rounds/avatar-round-ronaldo.png" alt=""/>
-              </div>
-              <div className="info__right-name regular">
-                <p className="f_24" >{this.props.grounds[0].username}</p>
-                <p className="f_22 g_2" >Owner</p>
-              </div>
+        </div>
+        <div className="info__right">
+
+            <div className="sectionground-div">
+                      <div className="sectionground-div-tagdetail">
+            {/* <Link to="/" className="sectionground-title bold g_3 f_30" href="/">CỘNG ĐỒNG</Link> */}
+                <div className="sectionground-div-child">
+                <div className="headerground__title">
+                <span className="re g_3">CÓ THỂ BẠN QUAN TÂM</span>
+        </div>
+        <div className="headerground-wrap">
+          {this.renderGrounds()}
+        </div>
+                </div>
+             
             </div>
-            <div className="info__right-content regular f_24">
-              <ReadMoreReact text={this.props.grounds[0].content}
-                      min={10}
-                      ideal={50}
-                      max={100} />
-            </div>
-            <p className="info__right-price regular f_46 gr">${this.props.grounds[0].price}.00<span className="info__right-price-s regular f_24 g_3">/hr</span></p>
-            <div className="info__right-button">
-              <Step1  name={this.props.grounds[0].namesta} 
-                      location={this.props.grounds[0].location}
-                      team={this.props.grounds[0].team}
-                      day = {moment(day).format('dddd')}
-                      date = {moment(day).format('DD')}
-                      month = {moment(day).format('MMMM')}
-                      year = {moment(day).format('YYYY')}
-                      starttime = {moment(starttime,'HH:mm').format('hh:mm a')}
-                      endtime = {moment(endtime,'HH:mm').format('hh:mm a')}
-                      players = {this.props.grounds[0].players}
-                      dayop = {this.props.grounds[0].dateop}
-                      rating = {this.props.grounds[0].rating}
-              />
-              <div className="info__right-farvo regular f_24">
-                <span className="icon-farvo info__right-farvoicon"></span>
-                <a className="info__right-farvo-img-p g_3" href="">
-                  <p>Farvorite</p>
-                </a>
-              </div>
-              <div className="info__right-share regular f_24">
-                <span className="icon-share info__right-farvoicon"></span>
-                <a className="info__right-farvo-img-p g_3" href="">
-                  <p className="g_3">Share</p>
-                </a>
-              </div>
-            </div>
-            <p className="info__right-hour regular f_22 gr"><span className="f_36">{this.props.grounds[0].hoursfree}</span> hours <span className="info__right-hours g_4">Available Today</span></p>
           </div>
+       
+        
+         
+          </div>
+        </div>
         </div>
         );
       }
@@ -75,7 +82,7 @@ class Info extends React.Component {
     Meteor.subscribe('grounds');
     return {
       grounds: GroundsCol.find({_id: new Mongo.ObjectID(props.match.params.GroundID)}, { sort: { createdAt: -1 } }).fetch(),
+      groundss: GroundsCol.find({}, { sort: { createdAt: -1} }).fetch(),  
     };
   })(Info)) 
-
 

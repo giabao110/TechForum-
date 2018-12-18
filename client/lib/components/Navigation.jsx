@@ -18,13 +18,13 @@ class Navigation extends Component {
 
   componentWillMount = () =>{
     if (!this.state.isAuthenticated) {
-      this.props.history.push('/login');
+      this.props.history.push('/');
     }
   }
 
   componentDidUpdate(prevProps, prevState){
     if (!this.state.isAuthenticated) {
-      this.props.history.push('/login');
+      this.props.history.push('/');
     }
   }
   
@@ -33,7 +33,7 @@ class Navigation extends Component {
     if (error) {
         console.log(error);
     } else {
-        this.props.history.push('/login')
+        this.props.history.push('/')
       }
     });  
   }
@@ -42,6 +42,7 @@ class Navigation extends Component {
       let userDataAvailable = (currentUser !== undefined);
       let loggedIn = (currentUser && userDataAvailable);
       let dashboard,avt;
+      avt = <Link to="/login" className="bold f_24 g_5">ĐĂNG NHẬP</Link>;
       if (loggedIn) {
         if (currentUser.profile.roles == "admin")
         {
@@ -52,6 +53,7 @@ class Navigation extends Component {
           dashboard = <li><Link to="*">Thông báo</Link></li>; 
           avt = <img className="nav__user-img" src={currentUser.profile.avt} alt=""/>;
         }
+
       } 
       return(
         <div className="navdiv">
@@ -69,23 +71,23 @@ class Navigation extends Component {
               </form>
               <ul className="nav__links bold f_24">
                 <li>
+                  <Link to="/">
+                  TIN TỨC</Link>
+                </li>
+                <li>
                   <Link to="/matchs">
                   DIỄN ĐÀN</Link>
                 </li>
                 <span className="regular f_20 ">{this.props.incompleteCount}</span>
-                {dashboard}
-                <li>
-                  <Link to="/">
-                  CAMERA</Link>
-                </li>
-                <li>
-                  <Link to="/profile">
-                  MUA BÁN</Link>
-                </li>
                 <li>
                   <Link to="*">
                   XE</Link>
                 </li>
+                <li>
+                  <Link to="/profile">
+                  THÔNG TIN</Link>
+                </li>
+                {dashboard}
               </ul>
             </nav>
             <div className="nav__right">
@@ -98,8 +100,9 @@ class Navigation extends Component {
                 </a>
                 { loggedIn ?  
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a className="dropdown-item medium f_24 g_5" href="#">Change Password</a>
-                  <a onClick={this.logout} className="dropdown-item medium f_24 g_5" href="#">Logout</a>
+                  <a className="dropdown-item medium f_24 g_5" href="#">Thay đổi mật khẩu</a>
+                  <a className="dropdown-item medium f_24 g_5" href="#">Thông tin thành viên</a>
+                  <a onClick={this.logout} className="dropdown-item medium f_24 g_5" href="#">Đăng xuất</a>
                 </div>
                 : '' }
               </div>

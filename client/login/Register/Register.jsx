@@ -37,8 +37,8 @@ class Register extends React.Component {
             return pwd.length >= 6 ? true : false;
         } else {
             return swal({
-                title: "Passwords don't match",
-                text: "Please try again !!!",
+                title: "Mật khẩu không chính xác !!!",
+                text: "Vui lòng nhập lại !!!",
                 showConfirmButton: true,
                 type: "error"
           });
@@ -53,8 +53,8 @@ class Register extends React.Component {
           profile:  {
                     roles: "user",
                     teamname: teamname,
-                    logoteam: "https://www.accountingweb.co.uk/sites/all/modules/custom/sm_pp_user_profile/img/default-user.png",
-                    avt:"https://www.accountingweb.co.uk/sites/all/modules/custom/sm_pp_user_profile/img/default-user.png"
+                    logoteam: "https://i0.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1",
+                    avt:"https://i0.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
                     }
       }, (error) => {
             if (error) {
@@ -76,58 +76,72 @@ class Register extends React.Component {
       return (
         <div>
           <div className="bg-img">
-            <div className="bg-wrap">
+          <div className="bg-wrapregis">
               <nav className="login__logo nav__items">
                 <div>
                   <span className="icon-brand"></span>
-                  <Link to="/" className="nav__logo-brand-name regular f_36" href="/">
-                  Football<span className="bold">Party</span></Link>
+                  <Link to="/" className="nav__logo-brand-name f_36" href="/">
+                  Tech<span className="bold">Forum</span></Link>
                 </div>
               </nav>
             </div>
             <form className="login__frm" onSubmit={this.regis}>
-              <div className="football__wraper">
+              <div className="football__wraperlogin">
                 <div className="regis__contain">
-                  <span className="light f_70 wt">Create Your Account</span>
+                  <span className="regular f_70 wt">TẠO TÀI KHOẢN</span>
                   <hr className="regis__hr">
                   </hr> 
                   <div className="regis__">
                     <div className="regis__div">
-                      <p htmlFor="psw" className="regis__divlb regular f_24 wt">Username</p>
-                      <input type="text" className="regis__input regular f_22" placeholder="Username"ref={this.username}required/>
+                      <p htmlFor="psw" className="regis__divlb regular f_24 wt">Tên đăng nhập</p>
+                      <input type="text" className="regis__input regular f_22 g_1" ref={this.username}required/>
                     </div>
                     <div className="regis__div">
                       <p htmlFor="psw" className="regis__divlb2 regis__spa regular f_24 wt">Email</p>
-                      <input type="email" className="regis__input regular f_22" placeholder="Email Address" ref={this.email}required/> 
+                      <input type="email" className="regis__input regular f_22 g_1" ref={this.email}required/> 
                     </div>
                   </div>
                   <div className="regis__">
                     <div className="regis__div">
-                      <p htmlFor="psw" className="regis__divlb regular f_24 wt">Password</p>
-                      <input type="password" className="regis__input regular f_22" placeholder="Password" ref={this.password}required/>
+                      <p htmlFor="psw" className="regis__divlb regular f_24 wt">Mật khẩu</p>
+                      <input type="password" className="regis__input regular f_22 g_1" ref={this.password}required/>
                     </div>
                     <div className="regis__div">
-                      <p htmlFor="psw" className="regis__divlb2 regis__spa regular f_24 wt">Confirm Password</p>
-                      <input type="password" className="regis__input regular f_22" placeholder="Confirm Password" ref={this.passwordagain} required/>
+                      <p htmlFor="psw" className="regis__divlb2 regis__spa regular f_24 wt">Nhập lại mật khẩu</p>
+                      <input type="password" className="regis__input regular f_22 g_1" ref={this.passwordagain} required/>
                     </div>
                   </div>
-                  {/* <div className="regis__">
+                  <div className="regis__">
                     <div className="regis__div">
-                      <p htmlFor="email" className="regis__divlb regular f_24 wt">First Name</p>
-                      <input type="text" className="regis__input regular f_22" placeholder="First Name" ref={this.firstname} required/>
+                      <p htmlFor="psw" className="regis__divlb regular f_24 wt">Ngày sinh</p>
+                      <input type="date" className="regis__input regular f_22 g_1"/>
                     </div>
                     <div className="regis__div">
-                      <p htmlFor="email" className="regis__divlb2 regis__spa regular f_24 wt">Last Name </p>
-                      <input type="text" className="regis__input regular f_22" placeholder="Last Name" ref={this.lasttname} required/>
+                      <p htmlFor="psw" className="regis__divlb2 regis__spa regular f_24 wt">Giới tính</p>
+                      <div className="regis__input">
+                      <input type="radio" defaultChecked/>
+                          <label className="regular f_24 wt regis_ck" >Nam</label>  
+                      <input type="radio"/>
+                          <label className="regular f_24 wt regis_ck" >Nữ</label>  
+                      <input type="radio"/>
+                          <label className="regular f_24 wt regis_ck" >Chưa rõ</label>  
+                      </div>
                     </div>
-                  </div> */}
+                  </div>
+
+                  <div className="regis__">
                   <div className="regis__div">
-                    <p htmlFor="psw"  className="regis__divlb regular f_24 wt">Team Name</p>
-                    <input type="text" className="regis__input regular f_22" placeholder="Team Name"ref={this.teamname}required/>
+                    <p htmlFor="psw"  className="regis__divlb regular f_24 wt">Tên thành viên</p>
+                    <input type="text" className="regis__input regular f_22 g_1" ref={this.teamname}required/>
                   </div>
-                   <button type="submit" className="btn regular f_32 wt" >Create Account</button>
+                  <div className="regis__div">
+                      <p htmlFor="psw" className="regis__divlb2 regis__spa regular f_24 wt">Số điện thoại</p>
+                      <input type="password" className="regis__input regular f_22 g_1" />
+                    </div>
+                  </div>
+                   <button type="submit" className="btn regular f_32 wt" >TẠO TÀI KHOẢN</button>
                   <div className="login__">
-                    <Link to="/login" className="regular f_24 wt">Sign In</Link>
+                    <Link to="/login" className="regular f_24 wt">Quay về đăng nhập</Link>
                   </div>
                 </div>
               </div>

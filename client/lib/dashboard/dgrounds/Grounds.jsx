@@ -33,8 +33,8 @@ class Grounds extends React.Component {
             <thead>
               <tr className="bold f_24">
                 <th scope="col">#</th>
-                <th scope="col">Stadium</th>
-                <th scope="col">Content</th>
+                <th scope="col">Tiêu đề</th>
+                <th scope="col">Nội dung bài viết</th>
                 <th scope="col">Location</th>
                 <th scope="col">Rating</th>
                 <th scope="col">Price</th>

@@ -77,7 +77,14 @@ html, body {
   margin: 0 auto;
   color: #2b2b2b;
   background: #232323;
+}
 
+.football__wraperlogin{
+  max-width: 990px;
+  padding-left: 24px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
 }
 
 #root{
@@ -206,6 +213,7 @@ a:hover{
 .g_8{
   color: #888888;
 }
+
 
 @font-face {
   font-family: 'icomoon';
