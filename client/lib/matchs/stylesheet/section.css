@@ -27,7 +27,7 @@
 .section__abv{
   display: flex;
   position: relative;
-  height: 123px; 
+  height: 158px; 
   /* border-bottom: 0.5px solid #dcdcdc; */
   background: #fbfbfb;
   overflow: hidden;
@@ -65,7 +65,7 @@
 
 /* ABOVE RIGHT */
 .section__formabv-right{
-  width: 338px;
+  width: 100%;
   display: block;
   line-height: 1;
 }

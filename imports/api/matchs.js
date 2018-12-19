@@ -32,6 +32,7 @@ Meteor.methods({
       author: Meteor.users.findOne(this.userId).username,
       team: Meteor.users.findOne(this.userId).profile.teamname,
       logo: Meteor.users.findOne(this.userId).profile.logoteam,
+      rating: Meteor.users.findOne(this.userId).profile.rating,
     });
   },
 

@@ -6,8 +6,8 @@ export default class Profile extends React.Component {
           <div>
             <div className="header__">
               <div className="header__left">
-                <div className="light f_70">
-                  <span>Update Profile User</span>
+                <div className="regular f_70">
+                  <span>CẬP NHẬT THÔNG TIN NGƯỜI DÙNG</span>
                 </div>
               </div>
             </div>
@@ -15,35 +15,35 @@ export default class Profile extends React.Component {
             <form className="regular f_24 frm_grounds">
               <div className="form-row">
                 <div className="col-md-4 mb-3">
-                  <label>User Name </label>
-                  <input type="text" className="form-control" ref="names" placeholder="User Name"/>
+                  <label>Tên đăng nhập</label>
+                  <input type="text" className="form-control" ref="names" />
                 </div>
                 <div className="col-md-4 mb-3">
-                  <label >Location</label>
-                  <input type="text" className="form-control" ref="location" placeholder="Location" />
+                  <label >Tên thành viên</label>
+                  <input type="text" className="form-control" ref="location" />
                 </div>
               </div>
               <div className="form-row">
                 <div className="col-md-4 mb-3">
-                  <label >Team</label>
-                  <input type="text" className="form-control" ref="img" placeholder="Team" />
+                  <label >Giới tính</label>
+                  <input type="text" className="form-control" ref="img" />
                 </div>
                 <div className="col-md-4 mb-3">
-                  <label >Username</label>
-                  <input type="text" className="form-control" placeholder="Username" />
+                  <label >Số điện thoại</label>
+                  <input type="text" className="form-control"/>
                 </div>
               </div>
               <div className="form-row">
                 <div className="col-md-3 mb-3">
-                  <label >Price</label>
-                  <input type="text" className="form-control" ref="price" placeholder="Price" />
+                  <label >Ghi chú</label>
+                  <input type="text" className="form-control" ref="price" />
                 </div>
                 <div className="col-md-1 mb-1">
-                  <label >Hour</label>
-                  <input type="text" className="form-control" ref="hoursfree" placeholder="Hour" />
+                  <label >Ngày sinh</label>
+                  <input type="text" className="form-control" ref="hoursfree" />
                 </div>
               </div>
-              <div className="form-row">
+              {/* <div className="form-row">
                 <div className="col-md-1 mb-1">
                   <label >Rating</label>
                   <select type="text" className="form-control" ref="rating" required>
@@ -61,8 +61,8 @@ export default class Profile extends React.Component {
                     <option value="false">Off</option>
                   </select>
                 </div>
-              </div>
-              <button className="matchs__btnsz btn-primary" type="submit">Insert</button>
+              </div> */}
+              <button className="matchs__btnsz btn-primary" type="submit">Lưu</button>
             </form>
           </div>
           );

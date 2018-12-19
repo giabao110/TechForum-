@@ -30,7 +30,7 @@ class Matchs extends Component {
                 <img className="section__abv-leftimg" src={this.props.matchss.avt} alt="" />
               </div>
               <span className="section__abv-leftrate">
-                {/* <Rate rate={Number(this.props.matchs.rating)}/> */}
+                <Rate rate={Number(this.props.matchss.rating)}/>
               </span>
             </div>
             <div className="section__formabv-right">
@@ -39,6 +39,8 @@ class Matchs extends Component {
               <span className="f_22 g_3" >Người đăng: <span className=" gr f_24" >{this.props.matchss.author}</span>          
               <span className="info__right-hour f_22 g_3">  Ngày đăng: <span className="gr f_24">{this.props.matchss.createdAt}</span></span></span>
               </div>
+              <p>{this.props.matchss.day}</p>
+             
               {/* <div className="section__time">
                 <div className="section__time-number light f_60 gr">{moment(day).format('DD')}</div>
                 <div className="section__time-day regular f_24"> 
@@ -56,21 +58,13 @@ class Matchs extends Component {
               </div> */}
             </div>
           </div>
-          {/* <div className="section__bl">
-            <div className="section__blleft">
-              <span className="icon-king"></span>
-              <span className="section__blleft-user">
-              <img className="section__blleft-userimg" src={this.props.matchs.avt} alt="" />
-              </span>
-              <span className="regular f_24">{this.props.matchs.username}</span>
-            </div>
-            <div className="section__blright">
-              <img src="img/topbar/people.svg" className="section__blrightlg"></img>
-              <span className="regular gr f_24">{this.props.matchs.players} Players</span>
-            </div>
-            {modal}
-          </div> */}
+          <form className="headerground__form" >
+              <input className="headerground__comment_input regular f_24" placeholder="Nhập bình luận của bạn ..." ref={this.text}/>  
+              <button className="headerground__comment_btn regular f_24">GỬI</button>
+            </form>
+        
         </div>
+        
       </div>
     );
   }

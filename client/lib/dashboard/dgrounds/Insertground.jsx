@@ -73,8 +73,8 @@ export default class Insertground extends React.Component {
         <div>
         <div className="header__">
           <div className="header__left">
-            <div className="light f_70">
-              <span>Thêm bài viết</span>
+            <div className="regular f_70">
+              <span>THÊM BÀI VIẾT MỚI</span>
             </div>
           </div>
         </div>
@@ -83,23 +83,23 @@ export default class Insertground extends React.Component {
           <div className="form-row">
             <div className="col-md-4 mb-3">
               <label>Tiêu đề bài viết</label>
-              <input type="text" className="form-control" ref={this.names} placeholder="Name Stadium"/>
+              <input type="text" className="form-control" ref={this.names}/>
             </div>
             <div className="col-md-4 mb-3">
-              <label >Location</label>
-              <input type="text" className="form-control" ref={this.location} placeholder="Location" />
+              <label >Hagtag</label>
+              <input type="text" className="form-control" ref={this.location} />
             </div>
           </div>
           <div className="form-row">
             <div className="col-md-8 mb-8">
               <label >Nội dung bài viết</label>
-              <input type="text" className="form-control" ref={this.content} placeholder="Content" />
+              <input type="text" className="form-control" ref={this.content}/>
             </div>
           </div>
-          <div className="form-row">
+          {/* <div className="form-row">
             <div className="col-md-4 mb-3">
               <label> Ngày viết</label>
-              {/* <input defaultValue="2018/10/02" type="date" ref={this.date} /> */}
+              <input defaultValue="2018/10/02" type="date" ref={this.date} />
             </div>
             <div className="col-md-2 mb-2">
               <label >Start time: </label>
@@ -109,28 +109,28 @@ export default class Insertground extends React.Component {
               <label >End time: </label>
               <input type="time" id="endTime" ref={this.endtime}/>
             </div>
-          </div>
+          </div> */}
           <div className="form-row">
-            <div className="col-md-1 mb-1">
+            {/* <div className="col-md-1 mb-1">
               <label >Price</label>
               <input type="text" className="form-control" placeholder="Price" ref={this.price}/>
-              {/* defaultValue={this.state.price} */}
-            </div>
-            <div className="col-md-2 mb-2">
+              defaultValue={this.state.price}
+            </div> */}
+            {/* <div className="col-md-2 mb-2">
               <label >Players</label>
               <input type="text" className="form-control"  ref={this.players} placeholder="Players"/>
-            </div>
-            <div className="col-md-1 mb-1">
+            </div> */}
+            {/* <div className="col-md-1 mb-1">
               <label >Hour</label>
               <input type="text" className="form-control" ref={this.hoursfree} placeholder="Hour" />
-            </div>
+            </div> */}
             <div className="col-md-4 mb-3">
               <label >URL image</label>
               <input type="text" className="form-control"  ref={this.img} placeholder="URL image" required/>
             </div>
           </div>
           <div className="form-row">
-            <div className="col-md-2 mb-2">
+            {/* <div className="col-md-2 mb-2">
               <label >Rating</label>
               <select type="text" className="form-control" ref={this.rating} required>
                 <option value="5">5</option>
@@ -143,7 +143,7 @@ export default class Insertground extends React.Component {
                 <option value="1.5">1.5</option>
                 <option value="1">1</option>
               </select>
-            </div>
+            </div> */}
             <div className="col-md-2 mb-2">
               <label >Status</label>
               <select type="text" className="form-control" ref={this.status} required>

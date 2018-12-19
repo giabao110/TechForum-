@@ -124,7 +124,7 @@ class Navigation extends Component {
                 <li className="topbar medium f_24">iOS</li>
                 <li className="topbar medium f_24">MacOS</li>
                 <li className="topbar medium f_24">Windows</li>
-                <div className="topbarright medium f_24">Không có sự kiện nào sắp diễn ra</div>
+                <li className="topbarright medium f_24">Không có sự kiện nào sắp diễn ra</li>
               </div>
               </div>
               </div>

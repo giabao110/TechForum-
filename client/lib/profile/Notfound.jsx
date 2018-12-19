@@ -4,7 +4,7 @@ export default class Notfound extends React.Component {
     render() {
     return (
         <div className="header__">
-          <h1>Not Found</h1>
+          <h1>Trang không tồn tại</h1>
         </div>
       );
     }

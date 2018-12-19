@@ -20,18 +20,18 @@ export default class Listgrounds extends React.Component {
         <td>{this.props.ground.namesta}</td>
         {/* Content */}
         <td>{this.props.ground.content}</td>
-        {/* Location */} 
-        <td>{this.props.ground.location}</td>
-        {/* Rating */} 
+        {/* Location 
+        <td>{this.props.ground.location}</td> */}
+        {/* Rating 
         <td>
           <Rate rate={Number(this.props.ground.rating)}/>
-        </td>
-        {/* Price */} 
-        <td>${this.props.ground.price}</td>
+        </td> */}
+        {/* Price 
+        <td>${this.props.ground.price}</td> */}
         {/* Status */} 
         <td>{this.props.ground.status.toString()}</td>
         {/* OPDay */} 
-        <td>{moment(this.props.ground.dateop.toString()).format('DD/MM/YY')}</td>
+        <td>{moment(this.props.ground.createdAt.toString()).format('DD/MM/YY')}</td>
         <td>
           <button type="button" className="matchs__btnsz btn-danger" onClick={this.updateThisGrounds.bind(this)}>Update</button>
           <button type="button" className="matchs__btnsz btn-warning" onClick={this.deleteThisGrounds.bind(this)}>Remove</button>

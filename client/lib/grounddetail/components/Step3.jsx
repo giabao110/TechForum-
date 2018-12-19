@@ -18,7 +18,7 @@ const customStyles = {
     marginRight           : '-50%',
     transform             : 'translate(-50%, -52%)',
     width                 : '682px',
-    height             : '282px',
+    height             : '320px',
     borderRadius          :0,
     padding: '0px'
   }
@@ -32,7 +32,9 @@ class App extends React.Component {
     this.state = {
       modalIsOpen: false
     };
+    this.content = React.createRef();
   }
+
 
   openModal = (e) => {
     e.preventDefault();
@@ -44,12 +46,8 @@ class App extends React.Component {
     this.subtitle.style.color = '#f00';
   }
 
-  renderabc = () =>  {
-    this.setState({modalIsOpen: false});
-  }
-
   closeModal = (e) =>  {
-    let currentUser = this.props.currentUser;
+    e.preventDefault();
     this.setState({modalIsOpen: false});
     const name = this.props.name;
     const dayop = this.props.dayop;
@@ -57,10 +55,10 @@ class App extends React.Component {
     const endtime = this.props.endtime;
     const players = this.props.players;
     const rating = this.props.rating;
-    const day = this.props.date;
+    const day = this.content.current.value;
     const location = this.props.location;
     Meteor.call('matchs.insert',name,dayop,starttime,endtime,players,rating,day,location);
-    console.log("ok")
+    console.log(day)
   }
 
   closeModalcancel = () =>  {
@@ -148,12 +146,12 @@ class App extends React.Component {
             <div className="stp2__footerwrap">
               <div className="stp3__footerwrap">
                 <span className="icon-cancel"></span>
-                <a onClick={this.closeModalcancel} href="" className="stp2__footertext regular f_28 gr">Cancel</a>
+                <p onClick={this.closeModalcancel} className="stp2__footertext regular f_28 gr">Hủy bỏ</p>
               </div>
               <Link className="stp2__a" to="/matchs">
               <button onClick={this.closeModal} className="stp3__footerbtn regular f_28 wt">
 
-              <span className="stp__2-btntext"> Send Invite </span>
+              <span className="stp__2-btntext"> Đăng bài viết </span>
               </button>
               </Link>
             </div>

@@ -200,7 +200,11 @@
   width: 70px;  
 }
 
-li [type=reset], [type=submit], button, html [type=button] {
+button.nav__links.bold.f_24.g_5 {
   -webkit-appearance: button-bevel !important;
   background: black;
+}
+
+div.section__formabv-right input.form-control{
+  height: 100px; border-radius: initial; margin: 5px 0px;
 }

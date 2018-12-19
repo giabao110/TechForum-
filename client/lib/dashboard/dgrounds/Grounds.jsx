@@ -35,11 +35,11 @@ class Grounds extends React.Component {
                 <th scope="col">#</th>
                 <th scope="col">Tiêu đề</th>
                 <th scope="col">Nội dung bài viết</th>
-                <th scope="col">Location</th>
-                <th scope="col">Rating</th>
-                <th scope="col">Price</th>
-                <th scope="col">Status</th>
-                <th scope="col">OPDay</th>
+                {/* <th scope="col">Location</th> */}
+                {/* <th scope="col">Rating</th> */}
+                {/* <th scope="col">Price</th> */}
+                <th scope="col">Trạng thái</th>
+                <th scope="col">Ngày tạo</th>
               </tr>
             </thead>
             <tbody>
